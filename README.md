@@ -1,3 +1,86 @@
+## API resources
+
+### GET    /api/v1/fast
+
+Endpoint for fast token validation.
+
+##### curl command
+
+```
+curl -H "Authorization: Bearer 53cff8f4a549beb1c38704158b0f6608a2382f094b6947ecc35c2eed4146a17c" \
+     localhost:3000/api/v1/fast
+```
+
+##### command output
+```
+{"ok": true}
+```
+
+### GET    /api/v1/me
+
+Endpoint for fetching current user data.
+
+##### curl command
+
+```
+curl -H "Authorization: Bearer 53cff8f4a549beb1c38704158b0f6608a2382f094b6947ecc35c2eed4146a17c" \
+     localhost:3000/api/v1/me
+```
+
+##### command output
+```
+{
+    "uid": "5e021e7c5eb6f54eef65e293",
+    "name": "John Doe",
+    "email": "john.doe@gmail.com",
+    "role": {
+        "is_admin": true,
+        "is_agent": false,
+        "is_professional": true
+    }
+}
+```
+
+### POST    /api/v1/broker/link
+
+Endpoint to link partners user account with token (resources owner) user.
+
+##### Required params to send
+
+```
+{ partner: {
+    uid: "partner UID NUMBER" # the one needed to link with broker account
+  }
+}
+```
+
+##### possible HTTP response
+
+* 201 - when resource and params sent are valid
+* 404 - when broker not found
+* 422 - when token is valid but params not or link already exists
+
+##### curl command
+
+```
+curl --location --request POST 'http://localhost:3000/api/v1/broker/link' \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer a8944cae979f21b04bcc11b8c80e16ed2b6f7a3f8f863999e2e4a2254c240712' \
+  --data-raw '{"partner": {"uid": "1234"}}'
+```
+
+##### command output
+```
+{
+    "uid": "5e021e7c5eb6f54eef65e293",
+    "linked_application": [{
+        "uid": "1234",
+        "application_id": "1234"
+    }]
+}
+```
+
+
 
 GET Party
 ----
