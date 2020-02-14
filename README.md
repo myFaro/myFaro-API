@@ -50,7 +50,7 @@ Endpoint to link the broker user account with token (resources owner) user.
 ##### Required params to send
 
 ```
-{ broker: {
+{ partner: {
     uid: "broker uid"
   }
 }
