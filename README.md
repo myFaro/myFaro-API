@@ -1,4 +1,6 @@
-## API resources
+## Oauth 2.0
+
+Request your client id and secret from info@myfaro.be.
 
 ### GET    /api/v1/fast
 
@@ -43,13 +45,13 @@ curl -H "Authorization: Bearer 53cff8f4a549beb1c38704158b0f6608a2382f094b6947ecc
 
 ### POST    /api/v1/broker/link
 
-Endpoint to link partners user account with token (resources owner) user.
+Endpoint to link the broker user account with token (resources owner) user.
 
 ##### Required params to send
 
 ```
-{ partner: {
-    uid: "partner UID NUMBER" # the one needed to link with broker account
+{ broker: {
+    uid: "broker uid"
   }
 }
 ```
