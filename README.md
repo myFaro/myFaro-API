@@ -5,7 +5,7 @@ Get the details for a Party using the myFaro uid
 
 * **URL**
 
-  /api/v1/parties/uid
+  /api/v1/parties/:uid
 
 * **Method:**
 
@@ -17,22 +17,12 @@ Get the details for a Party using the myFaro uid
 
    **Required:**
  
-   `id=[integer]`
-
-   **Optional:**
- 
-   `photo_id=[alphanumeric]`
-
-* **Data Params**
-
-  <_If making a post request, what should the body payload look like? URL Params rules apply here too._>
+   `uid=[string]`
 
 * **Success Response:**
-  
-  <_What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!_>
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12 }`
+    **Content:** `see Party model definition`
  
 * **Error Response:**
 
