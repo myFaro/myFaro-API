@@ -158,39 +158,12 @@ MODEL Party
 | :case_file_uid | String |  |
 | :broker_crm_id | String | the user visible party ID in the application is a field which is stored by myFaro and is used as a unique ID to reference the party in the application |
 | :broker_crm_group_id | String | a group id which is used to link parties in a casefile in myFaro |
-| Content | Content |  |
-| Content | Content |  |
-| Content | Content |  |
-| :gender | String | male\ female/ - legal_entity . kkkk |
-| Content | Content |  |
-| Content | Content |  |
-| Content | Content |  |
+| :national_id | String |  || Content | Content |  |
+| :id_card | String |  |
+| :party_role | String | head_of_family - partner - community - indivisibility - third_party - own_company - employer - child - parent - grandchild - brother_sister - ex_partner - grandparent - nephew_niece - uncle_aunt |
+| :gender | String | male - female - legal_entity |
+| :first_name | Content |  |
+| :last_name | Content |  |
+| :force_creation | Boolean |  |
+| :case_file_type | String | Report - View - Insight + Insight+ + LifePlan |
 
-:first_name	String	Optional	
-:last_name	String	Mandatory	
-:national_id	String	Optional	
-:id_card	String	Optional	
-	
-
-legal_entity	
-:party_role	String	head_of_family
-partner
-community
-indivisibility
-third_party
-own_company
-employer
-child
-parent
-grandchild
-brother_sister
-ex_partner
-grandparent
-nephew_niece
-uncle_aunt	
-:force_creation	Boolean		
-:case_file_type	String	Report
-View
-Insight
-Insight+
-LifePlan	
