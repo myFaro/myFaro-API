@@ -36,7 +36,7 @@ curl -H "Authorization: Bearer 53cff8f4a549beb1c38704158b0f6608a2382f094b6947ecc
     "name": "John Doe",
     "email": "john.doe@gmail.com",
     "role": {
-        "is_admin": true,
+        "is_broker_admin": true,
         "is_agent": false,
         "is_professional": true
     }
@@ -97,8 +97,6 @@ Get the details for a Party using the myFaro uid
   `GET`
   
 *  **URL Params**
-
-   <_If URL params exist, specify them in accordance with name mentioned in URL section. Separate into optional and required. Document data constraints._> 
 
    **Required:**
  
