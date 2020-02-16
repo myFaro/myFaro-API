@@ -150,3 +150,38 @@ Create a new Party
   * **Code:** 422 UNPROCESSABLE ENTRY <br />
     **Content:** `{ error : "Email Invalid" }`
 
+MODEL Party
+----
+
+:party_uid	String	Mandatory for update and delete	The myFaro UID which is returned to the Application after creation.
+:first_name	String	Optional	
+:last_name	String	Mandatory	
+:national_id	String	Optional	
+:id_card	String	Optional	
+:broker_crm_id	String	Mandatory	the user visible party ID in the application is a field which is stored by myFaro and is used as a unique ID to reference the party in the application
+:broker_crm_group_id	String	Optional	a group id which is used to link parties in a casefile in the Application
+:case_file_uid	String	Optional	a group id which is used to link parties in a casefile in myFaro
+:gender	String	male
+female
+legal_entity	
+:party_role	String	head_of_family
+partner
+community
+indivisibility
+third_party
+own_company
+employer
+child
+parent
+grandchild
+brother_sister
+ex_partner
+grandparent
+nephew_niece
+uncle_aunt	
+:force_creation	Boolean		
+:case_file_type	String	Report
+View
+Insight
+Insight+
+LifePlan	
