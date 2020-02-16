@@ -153,7 +153,7 @@ MODEL Party
 ----
 
 | Attributes  | Type | Notes |
-| ------------- | ------------- | ------------- |
+| :--- | ------------- | ------------- |
 | :party_uid  | String | the myFaro UID which is returned to the Application after creation |
 | :case_file_uid | String |  |
 | :broker_crm_id | String | the user visible party ID in the application is a field which is stored by myFaro and is used as a unique ID to reference the party in the application |
