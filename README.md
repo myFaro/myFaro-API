@@ -125,15 +125,14 @@ Create a new Party
   `POST`
   
 *  **URL Params**
-
-   **Required:**
  
    `none`
 
 * **Data Params**
 
-   
    `see Party model definition`
+   
+   At least one unique identifier must be present
 
 * **Success Response:**
   
@@ -153,7 +152,11 @@ Create a new Party
 MODEL Party
 ----
 
-:party_uid	String	Mandatory for update and delete	The myFaro UID which is returned to the Application after creation.
+| Attributes  | Type | Notes |
+| ------------- | ------------- | ------------- |
+| :party_uid  | String | The myFaro UID which is returned to the Application after creation |
+| Content Cell  | Content Cell  |  |
+
 :first_name	String	Optional	
 :last_name	String	Mandatory	
 :national_id	String	Optional	
