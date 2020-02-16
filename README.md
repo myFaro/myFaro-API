@@ -154,16 +154,24 @@ MODEL Party
 
 | Attributes  | Type | Notes |
 | ------------- | ------------- | ------------- |
-| :party_uid  | String | The myFaro UID which is returned to the Application after creation |
-| Content Cell  | Content Cell  |  |
+| :party_uid  | String | the myFaro UID which is returned to the Application after creation |
+| :case_file_uid | String |  |
+| :broker_crm_id | String | the user visible party ID in the application is a field which is stored by myFaro and is used as a unique ID to reference the party in the application |
+| :broker_crm_group_id | String | a group id which is used to link parties in a casefile in myFaro |
+| Content | Content |  |
+| Content | Content |  |
+| Content | Content |  |
+| Content | Content |  |
+| Content | Content |  |
+| Content | Content |  |
+| Content | Content |  |
 
 :first_name	String	Optional	
 :last_name	String	Mandatory	
 :national_id	String	Optional	
 :id_card	String	Optional	
-:broker_crm_id	String	Mandatory	the user visible party ID in the application is a field which is stored by myFaro and is used as a unique ID to reference the party in the application
-:broker_crm_group_id	String	Optional	a group id which is used to link parties in a casefile in the Application
-:case_file_uid	String	Optional	a group id which is used to link parties in a casefile in myFaro
+	
+
 :gender	String	male
 female
 legal_entity	
