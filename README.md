@@ -109,35 +109,20 @@ Get the details for a Party using the myFaro uid
  
 * **Error Response:**
 
-  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "Log in" }`
-
-  OR
-
-  * **Code:** 422 UNPROCESSABLE ENTRY <br />
-    **Content:** `{ error : "Email Invalid" }`
-
-* **Sample Call:**
-
-  <_Just a sample call to your endpoint in a runnable format ($.ajax call or a curl request) - this makes life easier and more predictable._> 
-
-* **Notes:**
-
-  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._> 
+  * **Code:** 404 PARTY NOT FOUND <br />
+    **Content:** `{ errors : "PARTY NOT FOUND" }`
   
-GET Party
+POST Party
 ----
-Get the details for a Party using the myFaro uid
+Create a new Party
 
 * **URL**
 
-  /api/v1/parties/uid
+  /api/v1/parties
 
 * **Method:**
 
-  `GET`
+  `POST`
   
 *  **URL Params**
 
@@ -174,10 +159,3 @@ Get the details for a Party using the myFaro uid
   * **Code:** 422 UNPROCESSABLE ENTRY <br />
     **Content:** `{ error : "Email Invalid" }`
 
-* **Sample Call:**
-
-  <_Just a sample call to your endpoint in a runnable format ($.ajax call or a curl request) - this makes life easier and more predictable._> 
-
-* **Notes:**
-
-  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._> 
