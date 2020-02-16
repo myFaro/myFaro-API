@@ -161,7 +161,7 @@ MODEL Party
 | Content | Content |  |
 | Content | Content |  |
 | Content | Content |  |
-| :gender | String | male - female - legal_entity |
+| :gender | String | male\female - legal_entity |
 | Content | Content |  |
 | Content | Content |  |
 | Content | Content |  |
