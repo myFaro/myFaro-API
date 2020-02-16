@@ -165,5 +165,5 @@ MODEL Party
 | :first_name | Content |  |
 | :last_name | Content |  |
 | :force_creation | Boolean |  |
-| :case_file_type | String | Report - View - Insight + Insight+ + LifePlan |
+| :case_file_type | String | Report - View - Insight - Insight+ - LifePlan |
 
