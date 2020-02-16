@@ -161,7 +161,8 @@ MODEL Party
 | Content | Content |  |
 | Content | Content |  |
 | Content | Content |  |
-| Content | Content |  |
+| :gender | String | male
+female |
 | Content | Content |  |
 | Content | Content |  |
 | Content | Content |  |
@@ -172,7 +173,7 @@ MODEL Party
 :id_card	String	Optional	
 	
 
-:gender	String	male
+		male
 female
 legal_entity	
 :party_role	String	head_of_family
