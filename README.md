@@ -168,13 +168,15 @@ Create a new Party
   OR
 
   * **Code:** 422 NOT A PARTNER OR OWN_COMPANY <br />
-    **Content:** `{ errors : "NOT A PARTNER OR OWN_COMPANY" }`
+    **Content:** `{ errors : "NOT A PARTNER OR OWN_COMPANY" }` <br />
+    **Reason:** when a party is the first party in the case_file, then it must have a :party_role equal to 'partner', 'head_of_family' or 'own_company'
     
   OR
 
   * **Code:** 422 ALREADY 2 PARTNERS <br />
-    **Content:** `{ errors : "ALREADY 2 PARTNERS" }`
-
+    **Content:** `{ errors : "ALREADY 2 PARTNERS" }` <br />
+    **Reason:** a case_file can only have two parties with a :party_role equal to 'partner' or 'head_of_family'
+    
 MODEL Party
 ----
 
