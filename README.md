@@ -132,22 +132,54 @@ Create a new Party
 
    `see Party model definition`
    
-   At least one unique identifier must be present
+   The :broker_crm_group_id and at least one unique identifier must be present
+   * ** :national_id
+   * ** :id_card
+   * ** :broker_crm_id
 
 * **Success Response:**
   
-  * **Code:** 200 <br />
-    **Content:** `{ id : 12 }`
+  * **Code:** 201 <br />
+    **Content:** `see Party model definition`
  
 * **Error Response:**
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "Log in" }`
+  * **Code:** 404 CASE FILE NOT FOUND <br />
+    **Content:** `{ errors: "CASE FILE NOT FOUND" }`
 
   OR
 
-  * **Code:** 422 UNPROCESSABLE ENTRY <br />
-    **Content:** `{ error : "Email Invalid" }`
+  * **Code:** 422 SAVE FAILED <br />
+    **Content:** `{ errors : save error messages }`
+    
+    
+  OR
+
+  * **Code:** 422 BROKER_CRM_GROUP_IP NOT PRESENT <br />
+    **Content:** `{ errors : "BROKER_CRM_GROUP_IP NOT PRESENT" }`
+    
+    
+  OR
+
+  * **Code:** 422 NO UNIQUE PARTY IDENTIFIER PRESENT <br />
+    **Content:** `{ errors : "NO UNIQUE PARTY IDENTIFIER PRESENT" }`
+    
+    
+  OR
+
+  * **Code:** 422 PARTY EXISTS IN OTHER CASE_FILE <br />
+    **Content:** `{ errors : "PARTY EXISTS IN OTHER CASE_FILE" }`
+    
+    
+  OR
+
+  * **Code:** 422 NOT A PARTNER OR OWN_COMPANY <br />
+    **Content:** `{ errors : "NOT A PARTNER OR OWN_COMPANY" }`
+    
+  OR
+
+  * **Code:** 422 ALREADY 2 PARTNERS <br />
+    **Content:** `{ errors : "ALREADY 2 PARTNERS" }`
 
 MODEL Party
 ----
