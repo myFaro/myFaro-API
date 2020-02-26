@@ -160,7 +160,7 @@ MODEL Party
 | :broker_crm_group_id | String | a group id which is used to link parties in a casefile in myFaro |
 | :national_id | String |  || Content | Content |  |
 | :id_card | String |  |
-| :party_role | String | head_of_family - partner - community - third_party - own_company - employer - child - parent - grandchild - brother_sister - ex_partner - grandparent - nephew_niece - uncle_aunt |
+| :party_role | String | head_of_family - partner - community - third_party - own_company - employer - child - parent - grandchild - brother_sister - ex_partner - grandparent - nephew_niece - uncle_aunt - party_role_other|
 | :gender | String | male - female - legal_entity |
 | :first_name | Content |  |
 | :last_name | Content |  |
