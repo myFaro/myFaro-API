@@ -193,5 +193,5 @@ MODEL Party
 | :first_name | Content |  |
 | :last_name | Content |  |
 | :force_creation | Boolean |  |
-| :case_file_type | String | Report - View - Insight - Insight+ - LifePlan |
+| :case_file_type | String | license_report - license_view - license_insight - license_insight_plus - license_life_plan |
 
