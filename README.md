@@ -150,19 +150,20 @@ Create a new Party
   OR
 
   * **Code:** 422 NO UNIQUE CASEFILE IDENTIFIER PRESENT <br />
-    **Content:** `{ errors : "NO UNIQUE CASEFILE IDENTIFIER PRESENT" }`
+    **Content:** `{ errors : "NO UNIQUE CASEFILE IDENTIFIER PRESENT" }` <br />
     **Reason:** to identify the case_file in which to create the party, either the :case_file_uid or the :broker_crm_group_id must be present
     
   OR
 
   * **Code:** 422 NO UNIQUE PARTY IDENTIFIER PRESENT <br />
-    **Content:** `{ errors : "NO UNIQUE PARTY IDENTIFIER PRESENT" }`
+    **Content:** `{ errors : "NO UNIQUE PARTY IDENTIFIER PRESENT" }` <br />
     **Reason:** to identify the party, either the :national_id, the :id_card or the :broker_crm_id must be present
     
   OR
 
   * **Code:** 422 PARTY EXISTS IN OTHER CASE_FILE <br />
-    **Content:** `{ errors : "PARTY EXISTS IN OTHER CASE_FILE" }`
+    **Content:** `{ errors : "PARTY EXISTS IN OTHER CASE_FILE" }` <br />
+    **Reason:** if a party is found which matches one of the unique identifiers, the party will not be created, unless the :force_creation is set to 'true'
     
   OR
 
