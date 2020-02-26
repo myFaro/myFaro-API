@@ -131,11 +131,6 @@ Create a new Party
 * **Data Params**
 
    `see Party model definition`
-   
-   The :broker_crm_group_id and at least one unique identifier must be present
-   * ** :national_id
-   * ** :id_card
-   * ** :broker_crm_id
 
 * **Success Response:**
   
@@ -148,28 +143,26 @@ Create a new Party
     **Content:** `{ errors: "CASE FILE NOT FOUND" }`
 
   OR
+  
+  * **Code:** 404 CASE FILE NOT SAVED <br />
+    **Content:** `{ errors: "CASE FILE NOT SAVED" }`
 
-  * **Code:** 422 SAVE FAILED <br />
-    **Content:** `{ errors : save error messages }`
-    
-    
   OR
 
-  * **Code:** 422 BROKER_CRM_GROUP_IP NOT PRESENT <br />
-    **Content:** `{ errors : "BROKER_CRM_GROUP_IP NOT PRESENT" }`
-    
+  * **Code:** 422 NO UNIQUE CASEFILE IDENTIFIER PRESENT <br />
+    **Content:** `{ errors : "NO UNIQUE CASEFILE IDENTIFIER PRESENT" }`
+    **Reason:** to identify the case_file in which to create the party, either the :case_file_uid or the :broker_crm_group_id must be present
     
   OR
 
   * **Code:** 422 NO UNIQUE PARTY IDENTIFIER PRESENT <br />
     **Content:** `{ errors : "NO UNIQUE PARTY IDENTIFIER PRESENT" }`
-    
+    **Reason:** to identify the party, either the :national_id, the :id_card or the :broker_crm_id must be present
     
   OR
 
   * **Code:** 422 PARTY EXISTS IN OTHER CASE_FILE <br />
     **Content:** `{ errors : "PARTY EXISTS IN OTHER CASE_FILE" }`
-    
     
   OR
 
