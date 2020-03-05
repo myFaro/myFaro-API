@@ -188,7 +188,7 @@ MODEL Party
 | :broker_crm_group_id | String | a group id which is used to link parties in a casefile in myFaro |
 | :national_id | String |  || Content | Content |  |
 | :id_card | String |  |
-| :party_role | String | head_of_family - gezinshoofd - chef de famille</br>partner - community - third_party - own_company - employer - child - parent - grandchild - brother_sister - ex_partner - grandparent - nephew_niece - uncle_aunt - party_role_other|
+| :party_role | String | head_of_family (Gezinshoofd - Chef de famille)</br>partner (Partner - Partenaire)</br>- community (Gemeenschap - Communauté)</br>- third_party (Derde partij - Partie tierce)</br>- own_company (Vennootschap - Société)</br>- employer (Werkgever - Employeur)</br>- child ( - )</br>- parent ( - )</br>- grandchild ( - )</br>- brother_sister ( - )</br>- ex_partner ( - )</br>- grandparent ( - )</br>- nephew_niece ( - )</br>- uncle_aunt ( - )</br>- party_role_other ( - )|
 | :gender | String | male - female - legal_entity |
 | :first_name | Content |  |
 | :last_name | Content |  |
