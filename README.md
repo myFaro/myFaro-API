@@ -188,7 +188,7 @@ MODEL Party
 | :broker_crm_group_id | String | a group id which is used to link parties in a casefile in myFaro |
 | :national_id | String |  || Content | Content |  |
 | :id_card | String |  |
-| :party_role | String | head_of_family (Gezinshoofd - Chef de famille)</br>partner (Partner - Partenaire)</br>- community (Gemeenschap - Communauté)</br>- third_party (Derde partij - Partie tierce)</br>- own_company (Vennootschap - Société)</br>- employer (Werkgever - Employeur)</br>- child ( - )</br>- parent ( - )</br>- grandchild ( - )</br>- brother_sister ( - )</br>- ex_partner ( - )</br>- grandparent ( - )</br>- nephew_niece ( - )</br>- uncle_aunt ( - )</br>- party_role_other ( - )|
+| :party_role | String | head_of_family (Gezinshoofd - Chef de famille)</br>partner (Partner - Partenaire)</br> community (Gemeenschap - Communauté)</br> third_party (Derde partij - Partie tierce)</br> own_company (Vennootschap - Société)</br> employer (Werkgever - Employeur)</br> child (Kind - Enfant)</br> parent (Ouder - Parent)</br> grandchild (Kleinkind - Petit-enfant)</br> brother_sister (Broer/zus - Frère/sœur)</br> ex_partner (Ex-partner - Ex partenaire)</br> grandparent (Grootouder - Grand-parent)</br> nephew_niece (Neef/nicht - Neveu/nièce)</br> uncle_aunt (Oom/tante - Oncle/tante)</br> party_role_other (Andere - Autre)|
 | :gender | String | male - female - legal_entity |
 | :first_name | Content |  |
 | :last_name | Content |  |
