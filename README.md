@@ -206,6 +206,8 @@ MODEL Party
 | :gender | String | male (Man - Homme)</br>female (Vrouw - Femme)</br>legal_entity (Rechtspersoon - Personne morale)|
 | :first_name | String |  |
 | :last_name | String |  |
+| :date_of_birth | Date |  |
+| :date_of_death | Date |  |
 | :email | String |  |
 | :phone | String |  |
 | :mobile | String |  |
