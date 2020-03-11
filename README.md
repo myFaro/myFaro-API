@@ -208,6 +208,7 @@ MODEL Party
 | :last_name | String |  |
 | :date_of_birth | Date |  |
 | :date_of_death | Date |  |
+| :place_of_birth | String |  |
 | :email | String |  |
 | :phone | String |  |
 | :mobile | String |  |
@@ -218,3 +219,5 @@ MODEL Party
 | :town | String |  |
 | :country | String | telebib	A121 or ISO-3166-1-alpha-2 |
 | :profession | String |  |
+| :id_valid_from | Date |  |
+| :id_valid_until | Date |  |
