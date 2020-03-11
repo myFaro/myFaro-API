@@ -186,7 +186,7 @@ MODEL Party
 | :--- | :--- | :--- |
 | :party_uid  | String | the myFaro UID which is returned to the Application after creation |
 | :broker_crm_id | String | the user visible party ID in the application is a field which is stored by myFaro and is used as a unique ID to reference the party in the application |
-| :national_id | String |  || Content | Content |  |
+| :national_id | String | The national id number for a person or the vat_number for a legal entity |
 | :id_card | String |  |
 
 #### Case File Attributes
@@ -217,3 +217,4 @@ MODEL Party
 | :zip_code | String |  |
 | :town | String |  |
 | :country | String | telebib	A121 or ISO-3166-1-alpha-2 |
+| :profession | String |  |
