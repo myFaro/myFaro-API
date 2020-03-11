@@ -185,11 +185,18 @@ MODEL Party
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
 | :party_uid  | String | the myFaro UID which is returned to the Application after creation |
-| :case_file_uid | String |  |
 | :broker_crm_id | String | the user visible party ID in the application is a field which is stored by myFaro and is used as a unique ID to reference the party in the application |
-| :broker_crm_group_id | String | a group id which is used to link parties in a casefile in myFaro |
 | :national_id | String |  || Content | Content |  |
 | :id_card | String |  |
+
+#### Case File Attributes
+
+| Attributes  | Type | Notes |
+| :--- | :--- | :--- |
+| :case_file_uid | String |  |
+| :broker_crm_group_id | String | a group id which is used to link parties in a casefile in myFaro |
+| :case_file_type | String | license_report (Report)</br> license_view (View)</br> license_insight (Insight)</br> license_insight_plus (Insight+)</br> license_life_plan (Life Plan)|
+| :force_creation | Boolean |  |
 
 #### Attributes
 
@@ -199,8 +206,6 @@ MODEL Party
 | :gender | String | male (Man - Homme)</br>female (Vrouw - Femme)</br>legal_entity (Rechtspersoon - Personne morale)|
 | :first_name | String |  |
 | :last_name | String |  |
-| :force_creation | Boolean |  |
-| :case_file_type | String | license_report (Report)</br> license_view (View)</br> license_insight (Insight)</br> license_insight_plus (Insight+)</br> license_life_plan (Life Plan)|
 | :email | String |  |
 | :phone | String |  |
 | :mobile | String |  |
