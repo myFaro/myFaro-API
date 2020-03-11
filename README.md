@@ -180,7 +180,7 @@ Create a new Party
 MODEL Party
 ----
 
-Identifiers
+####Identifiers
 
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
@@ -191,7 +191,7 @@ Identifiers
 | :national_id | String |  || Content | Content |  |
 | :id_card | String |  |
 
-Attributes
+####Attributes
 
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
