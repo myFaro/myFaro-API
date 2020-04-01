@@ -10,7 +10,7 @@ Endpoint for fast token validation.
 
 ```
 curl -H "Authorization: Bearer 53cff8f4a549beb1c38704158b0f6608a2382f094b6947ecc35c2eed4146a17c" \
-     localhost:3000/api/v1/fast
+     <<myfarohost>>/api/v1/fast
 ```
 
 ##### command output
@@ -26,7 +26,7 @@ Endpoint for fetching current user data.
 
 ```
 curl -H "Authorization: Bearer 53cff8f4a549beb1c38704158b0f6608a2382f094b6947ecc35c2eed4146a17c" \
-     localhost:3000/api/v1/me
+     <<myfarohost>>/api/v1/me
 ```
 
 ##### command output
@@ -65,7 +65,7 @@ Endpoint to link the broker user account with token (resources owner) user.
 ##### curl command
 
 ```
-curl --location --request POST 'http://localhost:3000/api/v1/broker/link' \
+curl --location --request POST 'http://<<myfarohost>>/api/v1/broker/link' \
   --header 'Content-Type: application/json' \
   --header 'Authorization: Bearer a8944cae979f21b04bcc11b8c80e16ed2b6f7a3f8f863999e2e4a2254c240712' \
   --data-raw '{"partner": {"uid": "1234"}}'
@@ -221,3 +221,16 @@ MODEL Party
 | :profession | String |  |
 | :id_valid_from | Date |  |
 | :id_valid_until | Date |  |
+
+OTHER
+----
+
+### Access myFaro using access token
+
+Once a user has linked their application account with a myFaro account via Oauth, they can use the access token to login into myFaro and access myFaro pages based on their myFaro user rights.  The access token is only valid for 5 minutes.
+
+For instance, to show the case_file in myFaro:
+
+```
+http://<<myfarohost>>/case_files/5c44c7981143ec0080551ec3?locale=nl&parm_limit=0&access_token=68595f50b8d7184af3357a29af79824b22c31e49cfff7f78d7c6469feb3cfa99
+```
