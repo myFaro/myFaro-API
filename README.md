@@ -218,6 +218,7 @@ MODEL Party
 | :zip_code | String |  |
 | :town | String |  |
 | :country | String | telebib	A121 or ISO-3166-1-alpha-2 |
+| :civil_status | String | telebib	A123 |
 | :profession | String |  |
 | :id_valid_from | Date |  |
 | :id_valid_until | Date |  |
