@@ -112,9 +112,8 @@ Get the details for a CaseFile using the myFaro uid.
   * **Code:** 404 CASEFILE NOT FOUND <br />
     **Content:** `{ errors : "CASEFILE NOT FOUND" }`
 
-```dif
--NEW!
-```
+> **NEW!**
+
 PUT CaseFile
 ----
 Update a CaseFile
@@ -273,6 +272,22 @@ MODEL CaseFile
 ----
 A CaseFile is a set of related Parties.  Each Party has a Role in the CaseFile.  A Party can only have the 'head_of_family_role' or 'partner' role in 1 CaseFile.  A CaseFile is created when creating the first Party.
 
+#### Identifiers
+
+| Attributes  | Type | Notes |
+| :--- | :--- | :--- |
+| :case_file_uid  | String | the myFaro UID which is returned to the Application after creation |
+| :broker_crm_group_id | String | a group id which is used to link parties in a CaseFile in the application a field which is stored by myFaro and is used as a unique ID to reference the case_file in the application |
+
+#### Attributes
+
+| Attributes  | Type | Notes |
+| :--- | :--- | :--- |
+| :case_file_type | String | license_report (Report)</br> license_view (View)</br> license_insight (Insight)</br> license_insight_plus (Insight+)</br> license_life_plan (Life Plan)|
+
+
+
+
 MODEL Party
 ----
 
@@ -290,10 +305,11 @@ MODEL Party
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
 | :case_file_uid | String |  |
-| :broker_crm_group_id | String | a group id which is used to link parties in a CaseFile in myFaro |
+| :broker_crm_group_id | String | a group id which is used to link parties in a CaseFile in the application |
 | :party_role | String | the role that the Party has in this CaseFile:</br>head_of_family (Gezinshoofd - Chef de famille)</br>partner (Partner - Partenaire)</br> community (Gemeenschap - Communauté)</br> third_party (Derde partij - Partie tierce)</br> own_company (Vennootschap - Société)</br> employer (Werkgever - Employeur)</br> child (Kind - Enfant)</br> parent (Ouder - Parent)</br> grandchild (Kleinkind - Petit-enfant)</br> brother_sister (Broer/zus - Frère/sœur)</br> ex_partner (Ex-partner - Ex partenaire)</br> grandparent (Grootouder - Grand-parent)</br> nephew_niece (Neef/nicht - Neveu/nièce)</br> uncle_aunt (Oom/tante - Oncle/tante)</br> party_role_other (Andere - Autre)|
 | :case_file_type | String | license_report (Report)</br> license_view (View)</br> license_insight (Insight)</br> license_insight_plus (Insight+)</br> license_life_plan (Life Plan)|
 | :force_creation | Boolean |  |
+| :case_file_roles | Array | an array of hashes |
 
 #### Attributes
 
