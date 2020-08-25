@@ -82,11 +82,37 @@ curl --location --request POST 'http://<<myfarohost>>/api/v1/broker/link' \
 }
 ```
 
+GET Casefile
+---
+Get the details for a CaseFile using the myFaro uid.
 
+* **URL**
+
+  /api/v1/case_files/:uid
+
+* **Method:**
+
+  `GET`
+  
+*  **URL Params**
+
+   **Required:**
+ 
+   `uid=[string]`
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** `see CaseFile model definition`
+ 
+* **Error Response:**
+
+  * **Code:** 404 CASEFILE NOT FOUND <br />
+    **Content:** `{ errors : "CASEFILE NOT FOUND" }`
 
 GET Party
 ----
-Get the details for a Party using the myFaro uid
+Get the details for a Party using the myFaro uid.
 
 * **URL**
 
@@ -139,16 +165,6 @@ Create a new Party
  
 * **Error Response:**
 
-  * **Code:** 404 CASE FILE NOT FOUND <br />
-    **Content:** `{ errors: "CASE FILE NOT FOUND" }`
-
-  OR
-  
-  * **Code:** 404 CASE FILE NOT SAVED <br />
-    **Content:** `{ errors: "CASE FILE NOT SAVED" }`
-
-  OR
-
   * **Code:** 422 NO UNIQUE CASEFILE IDENTIFIER PRESENT <br />
     **Content:** `{ errors : "NO UNIQUE CASEFILE IDENTIFIER PRESENT" }` <br />
     **Reason:** to identify the case_file in which to create the party, either the :case_file_uid or the :broker_crm_group_id must be present
@@ -177,6 +193,51 @@ Create a new Party
     **Content:** `{ errors : "ALREADY 2 PARTNERS" }` <br />
     **Reason:** a case_file can only have two parties with a :party_role equal to 'partner' or 'head_of_family'
     
+  OR
+  
+  * **Code:** 404 CASE FILE NOT SAVED <br />
+    **Content:** `{ errors: "CASE FILE NOT SAVED" }`
+    
+PUT Party
+----
+Update a Party
+
+* **URL**
+
+  /api/v1/parties
+
+* **Method:**
+
+  `POST`
+  
+*  **URL Params**
+ 
+   `none`
+
+* **Data Params**
+
+   `see Party model definition`
+
+* **Success Response:**
+  
+  * **Code:** 201 <br />
+    **Content:** `see Party model definition`
+ 
+* **Error Response:**
+
+  * **Code:** 404 PARTY NOT FOUND <br />
+    **Content:** `{ errors: "CASE FILE NOT FOUND" }`
+
+  OR
+  
+  * **Code:** 404 CASE FILE NOT FOUND <br />
+    **Content:** `{ errors: "CASE FILE NOT FOUND" }`
+
+    
+MODEL CaseFile
+----
+A CaseFile is a set of related Parties.  Each Party has a Role in the CaseFile.  A Party can only have the 'head_of_family_role' or 'partner' role in 1 CaseFile.  A CaseFile is created when creating the first Party.
+
 MODEL Party
 ----
 
