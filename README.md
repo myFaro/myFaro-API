@@ -82,9 +82,8 @@ curl --location --request POST 'http://<<myfarohost>>/api/v1/broker/link' \
 }
 ```
 
-```diff
--NEW!
-```
+> **NEW!**
+
 GET Casefile
 ---
 Get the details for a CaseFile using the myFaro uid.
