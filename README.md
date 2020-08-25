@@ -204,15 +204,15 @@ Update a Party
 
 * **URL**
 
-  /api/v1/parties
+  /api/v1/parties/:uid
 
 * **Method:**
 
-  `POST`
+  `PUT`
   
 *  **URL Params**
  
-   `none`
+   `uid=[string]`
 
 * **Data Params**
 
@@ -250,12 +250,13 @@ MODEL Party
 | :national_id | String | The national id number for a person or the vat_number for a legal entity |
 | :id_card | String |  |
 
-#### Case File Attributes
+#### Case File Related Attributes
 
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
 | :case_file_uid | String |  |
-| :broker_crm_group_id | String | a group id which is used to link parties in a casefile in myFaro |
+| :broker_crm_group_id | String | a group id which is used to link parties in a CaseFile in myFaro |
+| :party_role | String | the role that the Party has in this CaseFile: head_of_family (Gezinshoofd - Chef de famille)</br>partner (Partner - Partenaire)</br> community (Gemeenschap - Communauté)</br> third_party (Derde partij - Partie tierce)</br> own_company (Vennootschap - Société)</br> employer (Werkgever - Employeur)</br> child (Kind - Enfant)</br> parent (Ouder - Parent)</br> grandchild (Kleinkind - Petit-enfant)</br> brother_sister (Broer/zus - Frère/sœur)</br> ex_partner (Ex-partner - Ex partenaire)</br> grandparent (Grootouder - Grand-parent)</br> nephew_niece (Neef/nicht - Neveu/nièce)</br> uncle_aunt (Oom/tante - Oncle/tante)</br> party_role_other (Andere - Autre)|
 | :case_file_type | String | license_report (Report)</br> license_view (View)</br> license_insight (Insight)</br> license_insight_plus (Insight+)</br> license_life_plan (Life Plan)|
 | :force_creation | Boolean |  |
 
@@ -263,7 +264,6 @@ MODEL Party
 
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
-| :party_role | String | head_of_family (Gezinshoofd - Chef de famille)</br>partner (Partner - Partenaire)</br> community (Gemeenschap - Communauté)</br> third_party (Derde partij - Partie tierce)</br> own_company (Vennootschap - Société)</br> employer (Werkgever - Employeur)</br> child (Kind - Enfant)</br> parent (Ouder - Parent)</br> grandchild (Kleinkind - Petit-enfant)</br> brother_sister (Broer/zus - Frère/sœur)</br> ex_partner (Ex-partner - Ex partenaire)</br> grandparent (Grootouder - Grand-parent)</br> nephew_niece (Neef/nicht - Neveu/nièce)</br> uncle_aunt (Oom/tante - Oncle/tante)</br> party_role_other (Andere - Autre)|
 | :gender | String | male (Man - Homme)</br>female (Vrouw - Femme)</br>legal_entity (Rechtspersoon - Personne morale)|
 | :first_name | String |  |
 | :last_name | String |  |
