@@ -116,7 +116,7 @@ Get the details for a CaseFile using the myFaro uid.
 
 PUT CaseFile
 ----
-Update a CaseFile
+Update a CaseFile, including Advisors
 
 * **URL**
 
@@ -284,9 +284,26 @@ A CaseFile is a set of related Parties.  Each Party has a Role in the CaseFile. 
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
 | :case_file_type | String | license_report (Report)</br> license_view (View)</br> license_insight (Insight)</br> license_insight_plus (Insight+)</br> license_life_plan (Life Plan)|
+| :advisors | Array | an array of the advisors for the CaseFile.   Each Advisor is represented by a hash.  See Advisor model definition |
+| :parties | Array | an array of the parties for the CaseFile.  Each Party is represented by a hash with the following keys: :broker_crm_id, :party_role.  See Party model definition |
 
 
+MODEL Advisor
+----
+| Attributes  | Type | Notes |
+| :--- | :--- | :--- |
+| :name | String | |
+| :advisor_role | String | the role that the Advisor has in this CaseFile:</br>main_advisor (Gezins | )</br> financial_advisor (Financieel adviseur | Conseiller financier)</br>account_manager (Account manager | Gestionnaire de compte)</br>insurance_advisor (Verzekeringsadviseur | Conseiller assurances)</br>claims_advisor (Claims adviseur	| Conseiller en sinistres)<br>
+Client Executive	Client executive	Client executive			5	internal			23 apr 2020	
+Bankier	Bankier	Banquier	Bankier		10	external			23 apr 2020	
+Boekhouder/Fiscalist	Boekhouder/fiscalist	Comptable/Fiscaliste	Boekhouder/Fiscalist		11	external			23 apr 2020	
+Verzekeringsmakelaar	Verzekeringsmakelaar	Courtier en assurances	Verzekeringsmakelaar		12	external			23 apr 2020	
+Geneesheer	Geneesheer	Médecin	Geneesheer		13	external			23 apr 2020	
+Notaris	Notaris	Notaire	Notaris		14	external			23 apr 2020	
+Advisor Role Other	Overige	Autre
 
+| :email | String | |
+| :phone | String | |
 
 MODEL Party
 ----
