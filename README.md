@@ -82,10 +82,9 @@ curl --location --request POST 'http://<<myfarohost>>/api/v1/broker/link' \
 }
 ```
 
-> **NEW!**
-
 GET Casefile
 ---
+> **NEW!**
 Get the details for a CaseFile using the myFaro uid.
 
 * **URL**
@@ -112,10 +111,9 @@ Get the details for a CaseFile using the myFaro uid.
   * **Code:** 404 CASEFILE NOT FOUND <br />
     **Content:** `{ errors : "CASEFILE NOT FOUND" }`
 
-> **NEW!**
-
 PUT CaseFile
 ----
+> **NEW!**
 Update a CaseFile, including Advisors
 
 * **URL**
