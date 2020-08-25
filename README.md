@@ -82,7 +82,9 @@ curl --location --request POST 'http://<<myfarohost>>/api/v1/broker/link' \
 }
 ```
 
+```diff
 -NEW!
+```
 GET Casefile
 ---
 Get the details for a CaseFile using the myFaro uid.
@@ -111,7 +113,9 @@ Get the details for a CaseFile using the myFaro uid.
   * **Code:** 404 CASEFILE NOT FOUND <br />
     **Content:** `{ errors : "CASEFILE NOT FOUND" }`
 
+```dif
 -NEW!
+```
 PUT CaseFile
 ----
 Update a CaseFile
