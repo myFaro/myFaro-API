@@ -82,6 +82,7 @@ curl --location --request POST 'http://<<myfarohost>>/api/v1/broker/link' \
 }
 ```
 
+-NEW!
 GET Casefile
 ---
 Get the details for a CaseFile using the myFaro uid.
@@ -109,6 +110,37 @@ Get the details for a CaseFile using the myFaro uid.
 
   * **Code:** 404 CASEFILE NOT FOUND <br />
     **Content:** `{ errors : "CASEFILE NOT FOUND" }`
+
+-NEW!
+PUT CaseFile
+----
+Update a CaseFile
+
+* **URL**
+
+  /api/v1/case_files/:uid
+
+* **Method:**
+
+  `PUT`
+  
+*  **URL Params**
+ 
+   `uid=[string]`
+
+* **Data Params**
+
+   `see CaseFile model definition`
+
+* **Success Response:**
+  
+  * **Code:** 201 <br />
+    **Content:** `see CaseFile model definition`
+ 
+* **Error Response:**
+  
+  * **Code:** 404 CASE FILE NOT FOUND <br />
+    **Content:** `{ errors: "CASE FILE NOT FOUND" }`
 
 GET Party
 ----
@@ -226,7 +258,7 @@ Update a Party
 * **Error Response:**
 
   * **Code:** 404 PARTY NOT FOUND <br />
-    **Content:** `{ errors: "CASE FILE NOT FOUND" }`
+    **Content:** `{ errors: "PARTY NOT FOUND" }`
 
   OR
   
@@ -256,7 +288,7 @@ MODEL Party
 | :--- | :--- | :--- |
 | :case_file_uid | String |  |
 | :broker_crm_group_id | String | a group id which is used to link parties in a CaseFile in myFaro |
-| :party_role | String | the role that the Party has in this CaseFile: head_of_family (Gezinshoofd - Chef de famille)</br>partner (Partner - Partenaire)</br> community (Gemeenschap - Communauté)</br> third_party (Derde partij - Partie tierce)</br> own_company (Vennootschap - Société)</br> employer (Werkgever - Employeur)</br> child (Kind - Enfant)</br> parent (Ouder - Parent)</br> grandchild (Kleinkind - Petit-enfant)</br> brother_sister (Broer/zus - Frère/sœur)</br> ex_partner (Ex-partner - Ex partenaire)</br> grandparent (Grootouder - Grand-parent)</br> nephew_niece (Neef/nicht - Neveu/nièce)</br> uncle_aunt (Oom/tante - Oncle/tante)</br> party_role_other (Andere - Autre)|
+| :party_role | String | the role that the Party has in this CaseFile:</br>head_of_family (Gezinshoofd - Chef de famille)</br>partner (Partner - Partenaire)</br> community (Gemeenschap - Communauté)</br> third_party (Derde partij - Partie tierce)</br> own_company (Vennootschap - Société)</br> employer (Werkgever - Employeur)</br> child (Kind - Enfant)</br> parent (Ouder - Parent)</br> grandchild (Kleinkind - Petit-enfant)</br> brother_sister (Broer/zus - Frère/sœur)</br> ex_partner (Ex-partner - Ex partenaire)</br> grandparent (Grootouder - Grand-parent)</br> nephew_niece (Neef/nicht - Neveu/nièce)</br> uncle_aunt (Oom/tante - Oncle/tante)</br> party_role_other (Andere - Autre)|
 | :case_file_type | String | license_report (Report)</br> license_view (View)</br> license_insight (Insight)</br> license_insight_plus (Insight+)</br> license_life_plan (Life Plan)|
 | :force_creation | Boolean |  |
 
