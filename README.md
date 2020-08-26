@@ -329,8 +329,9 @@ Only to be used when creating a Party to indicate in which CaseFile to create th
 | :force_creation | Boolean |  |
 
 | Attributes  | Type | Notes |
+| :--- | :--- | :--- |
 | :case_file_type | String | license_report (Report)</br> license_view (View)</br> license_insight (Insight)</br> license_insight_plus (Insight+)</br> license_life_plan (Life Plan)|
-| :case_file_roles | Array | an array of hashes with the following keys: :broker_crm_group_id, :case_file_uid, :party_role |
+| :case_files | Array | an array of hashes with the following keys: :broker_crm_group_id, :case_file_uid, :party_role |
 
 #### Attributes
 
