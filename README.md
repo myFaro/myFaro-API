@@ -142,6 +142,12 @@ Update a CaseFile, including Advisors
   * **Code:** 404 CASE FILE NOT FOUND <br />
     **Content:** `{ errors: "CASE FILE NOT FOUND" }`
 
+TODO
+----
+POST CaseFile
+POST CaseFile/Party
+DEL CaseFile/Party
+
 GET Party
 ----
 Get the details for a Party using the myFaro uid.
@@ -265,6 +271,9 @@ Update a Party
   * **Code:** 404 CASE FILE NOT FOUND <br />
     **Content:** `{ errors: "CASE FILE NOT FOUND" }`
 
+TODO
+----
+DEL Party
     
 MODEL CaseFile
 ----
@@ -283,7 +292,7 @@ A CaseFile is a set of related Parties.  Each Party has a Role in the CaseFile. 
 | :--- | :--- | :--- |
 | :case_file_type | String | license_report (Report)</br> license_view (View)</br> license_insight (Insight)</br> license_insight_plus (Insight+)</br> license_life_plan (Life Plan)|
 | :advisors | Array | an array of the advisors for the CaseFile.   Each Advisor is represented by a hash.  See Advisor model definition |
-| :parties | Array | an array of the parties for the CaseFile.  Each Party is represented by a hash with the following keys: :broker_crm_id, :party_role.  See Party model definition |
+| :parties | Array | an array of the parties for the CaseFile.  Each Party is represented by a hash with the following keys: :party_uid, :broker_crm_id, :party_role.  See Party model definition |
 
 
 MODEL Advisor
@@ -309,7 +318,7 @@ MODEL Party
 
 #### Case File Related Attributes
 
-Only to be used when creating a Party to indicate in which CaseFile to create the first instance of the Party:
+Only to be used when creating a Party to indicate in which CaseFile to create the first instance of the Party - TODO: this will be removed and replaced with a POST case_file and POST case_file/party.  :force_creation then also becomes unnecessary
 
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
