@@ -85,7 +85,7 @@ curl --location --request POST 'http://<<myfarohost>>/api/v1/broker/link' \
 GET Casefile
 ---
 > **NEW!**
-Get the details for a CaseFile using the myFaro uid.
+Get the details for a CaseFile using the myFaro uid.  This includes the information on the Parties and Advisors which are assigned to the CaseFile.
 
 * **URL**
 
@@ -114,7 +114,7 @@ Get the details for a CaseFile using the myFaro uid.
 PUT CaseFile
 ----
 > **NEW!**
-Update a CaseFile, including Advisors
+Updates a CaseFile, including Advisors.  Parties are added and removed via the CaseFile/Parties relationship.
 
 * **URL**
 
@@ -144,9 +144,10 @@ Update a CaseFile, including Advisors
 
 TODO
 ----
-POST CaseFile
 POST CaseFile/Party
+Add a Party to a CaseFile with a certain PartyRole.
 DEL CaseFile/Party
+Remove a Party from a CaseFile
 
 GET Party
 ----
@@ -178,7 +179,7 @@ Get the details for a Party using the myFaro uid.
   
 POST Party
 ----
-Create a new Party
+Create a new Party.  Also create a CaseFile if it does not exist yet.
 
 * **URL**
 
@@ -238,7 +239,7 @@ Create a new Party
     
 PUT Party
 ----
-Update a Party
+Update a Party.
 
 * **URL**
 
@@ -273,7 +274,7 @@ Update a Party
 
 TODO
 ----
-DEL Party
+DEL Party.  If the last Party is deleted then also delete the CaseFile.
     
 MODEL CaseFile
 ----
