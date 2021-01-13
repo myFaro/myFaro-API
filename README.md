@@ -295,14 +295,20 @@ A CaseFile is a set of related Parties.  Each Party has a Role in the CaseFile. 
 | :advisors | Array | an array of the advisors for the CaseFile.   Each Advisor is represented by a hash.  See Advisor model definition |
 | :parties | Array | an array of the parties for the CaseFile.  Each Party is represented by a hash with the following keys: :party_uid, :broker_crm_id, :party_role.  See Party model definition |
 
-
 MODEL Advisor
 ----
+An Advisor is not a Party in a CaseFile but someone who 'advises' the Parties in some capacity.
+
+#### Attributes
+
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
-| :name | String | s |
+| :case_file_type | String | license_report (Report)</br> license_view (View)</br> license_insight (Insight)</br> license_insight_plus (Insight+)</br> license_life_plan (Life Plan)|
+| :advisors | Array | an array of the advisors for the CaseFile.   Each Advisor is represented by a hash.  See Advisor model definition |
+| :parties | Array | an array of the parties for the CaseFile.  Each Party is represented by a hash with the following keys: :party_uid, :broker_crm_id, :party_role.  See Party model definition |
 
 ----
+
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
 | :name | String |  |
