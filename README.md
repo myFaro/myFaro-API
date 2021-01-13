@@ -300,6 +300,7 @@ MODEL Advisor
 ----
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
+| :name | String | s |
 
 ----
 | Attributes  | Type | Notes |
