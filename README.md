@@ -203,22 +203,22 @@ Get a list of Parties matching a set of criteria.  Use parameters and pagination
   * **Code:** 200 <br/>
     **Content:**
   
-  ```
-   {"parties": [{see Party model definition},{},...]`<br/>
-   "meta": {`<br/>
-        "pagination": {`<br/>
-            "per_page": 25,`<br/>
-            "total_pages": 5,`<br/>
-            "total_objects": 115,`<br/>
-            "links": {`<br/>
-                "first": "/api/v1/parties?broker_crm_id=1235&first_name=xyz%C3%A9&id_card=592199787244&last_name=abc%22&national_id=77121307968&page=1",`<br/>
-                "last": "/api/v1/parties?broker_crm_id=1235&first_name=xyz%C3%A9&id_card=592199787244&last_name=abc%22&national_id=77121307968&page=5",`<br/>
-                "prev": "/api/v1/parties?broker_crm_id=1235&first_name=xyz%C3%A9&id_card=592199787244&last_name=abc%22&national_id=77121307968&page=2",`<br/>
-                "next": "/api/v1/parties?broker_crm_id=1235&first_name=xyz%C3%A9&id_card=592199787244&last_name=abc%22&national_id=77121307968&page=4"`<br/>
-            }`<br/>
-        }`<br/>
-   }
-   ```
+       ```
+        {"parties": [{see Party model definition},{},...]
+        "meta": {`<br/>
+             "pagination": {
+                 "per_page": 25,
+                 "total_pages": 5,
+                 "total_objects": 115,
+                 "links": {
+                     "first": "/api/v1/parties?broker_crm_id=1235&first_name=xyz%C3%A9&id_card=592199787244&last_name=abc%22&national_id=77121307968&page=1",
+                     "last": "/api/v1/parties?broker_crm_id=1235&first_name=xyz%C3%A9&id_card=592199787244&last_name=abc%22&national_id=77121307968&page=5",
+                     "prev": "/api/v1/parties?broker_crm_id=1235&first_name=xyz%C3%A9&id_card=592199787244&last_name=abc%22&national_id=77121307968&page=2",
+                     "next": "/api/v1/parties?broker_crm_id=1235&first_name=xyz%C3%A9&id_card=592199787244&last_name=abc%22&national_id=77121307968&page=4"
+                 }
+             }
+        }
+        ```
  
 * **Error Response:**
 
