@@ -177,7 +177,7 @@ Get the details for a Party using the myFaro uid.
   * **Code:** 404 PARTY NOT FOUND <br />
     **Content:** `{ errors : "PARTY NOT FOUND" }`
     
-Search Party
+SEARCH Party
 ----
 Get a list of Parties matching a set of criteria.  Use parameters and pagination to receive 25 parties per call.
 
