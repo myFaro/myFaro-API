@@ -176,6 +176,52 @@ Get the details for a Party using the myFaro uid.
 
   * **Code:** 404 PARTY NOT FOUND <br />
     **Content:** `{ errors : "PARTY NOT FOUND" }`
+    
+Search Party
+----
+Get a list of Parties matching a set of criteria.  Use parameters and pagination to receive 25 parties per call.
+
+* **URL**
+
+  /api/v1/parties/
+
+* **Method:**
+
+  `GET`
+  
+*  **URL Params**
+
+   `national_id` finds an exact match
+   `id_card` finds an exact match
+   `broker_crm_id` finds an exact match
+   `first_name` finds parties whose first_name contains the parameter
+   `last_name` finds parties whose last_name contains the parameter
+   `page` returns the set of 25 parties contained in this specific page
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:**
+   
+   {"parties": [{`see Party model definition`},{},...]
+    "meta": {
+        "pagination": {
+            "per_page": 25,
+            "total_pages": 5,
+            "total_objects": 115,
+            "links": {
+                "first": "/api/v1/parties?broker_crm_id=1235&first_name=xyz%C3%A9&id_card=592199787244&last_name=abc%22&national_id=77121307968&page=1",
+                "last": "/api/v1/parties?broker_crm_id=1235&first_name=xyz%C3%A9&id_card=592199787244&last_name=abc%22&national_id=77121307968&page=5",
+                "prev": "/api/v1/parties?broker_crm_id=1235&first_name=xyz%C3%A9&id_card=592199787244&last_name=abc%22&national_id=77121307968&page=2",
+                "next": "/api/v1/parties?broker_crm_id=1235&first_name=xyz%C3%A9&id_card=592199787244&last_name=abc%22&national_id=77121307968&page=4"
+            }
+        }
+    }
+ 
+* **Error Response:**
+
+  * **Code:** 404 NO PARTIES FOUND <br />
+    **Content:** `{ errors : "NO PARTIES FOUND" }`
   
 POST Party
 ----
@@ -275,7 +321,7 @@ Update a Party.
 TODO
 ----
 DEL Party.  If the last Party is deleted then also delete the CaseFile.
-    
+
 MODEL CaseFile
 ----
 A CaseFile is a set of related Parties.  Each Party has a Role in the CaseFile.  A Party can only have the 'head_of_family_role' or 'partner' role in 1 CaseFile.  A CaseFile is created when creating the first Party.
