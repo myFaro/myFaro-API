@@ -355,7 +355,7 @@ Only to be used when creating a Party to indicate in which CaseFile to create th
 | :zip_code | String |  |
 | :town | String |  |
 | :country | String | ISO-3166-1-alpha-2 |
-| :locale | String | ISO-639-1 |
+| :locale | String | ISO-639-1 The stated language will be used to determine the language of the case_file at the time of creation - once a case_file is created, the language cannot be changed |
 | :civil_status | String | telebib	A123 |
 | :social_status | String | telebib A132 |
 | :profession | String |  |
