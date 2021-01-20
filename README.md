@@ -355,6 +355,7 @@ Only to be used when creating a Party to indicate in which CaseFile to create th
 | :zip_code | String |  |
 | :town | String |  |
 | :country | String | ISO-3166-1-alpha-2 |
+| :locale | String | ISO-639-1 |
 | :civil_status | String | telebib	A123 |
 | :social_status | String | telebib A132 |
 | :profession | String |  |
