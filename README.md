@@ -324,6 +324,7 @@ Update a Party.
 
 DEL Party
 ----
+> **NEW!**
 Delete a Party.  This is only allowed for Parties who are not the key parties in a case_file, don't have any remaining assets and are connected to only one case_file.  
 
 * **URL**
@@ -354,6 +355,7 @@ Delete a Party.  This is only allowed for Parties who are not the key parties in
 
 GET InsuranceAsset
 ----
+> **NEW!**
 Get the details for an Insurance Policy using the myFaro uid.
 
 * **URL**
@@ -382,6 +384,7 @@ Get the details for an Insurance Policy using the myFaro uid.
     
 POST InsuranceAsset
 ----
+> **NEW!**
 Create a new Insurance Policy for an Insuring Party and an Insurance Company.
 
 * **URL**
@@ -409,20 +412,51 @@ Create a new Insurance Policy for an Insuring Party and an Insurance Company.
 
   * **Code:** 422 NO UNIQUE INSURANCE_ASSET IDENTIFIER PRESENT <br />
     **Content:** `{ errors : "NO UNIQUE INSURANCE_ASSET IDENTIFIER PRESENT" }` <br />
-    **Reason:** to identify the insurance_asset, the policy_reference must be provided
+    **Reason:** to identify the insurance_asset, the unique 'policy_reference' must be provided
     
   OR
 
   * **Code:** 422 NO INSURING PARTY UID PRESENT <br />
     **Content:** `{ errors : "NO INSURING PARTY UID PRESENT" }` <br />
-    **Reason:** to identify the party which is holding the InsuranceAsset, the Party UID must be present
+    **Reason:** to identify the party which is holding the InsuranceAsset, the 'insuring_party_uid' must be present
     
   OR
 
   * **Code:** 422 NO INSURANCE COMPANY IDENTIFIER PRESENT <br />
     **Content:** `{ errors : "NO INSURANCE COMPANY IDENTIFIER PRESENT" }` <br />
-    **Reason:** to uniquely identify the insurance_asset, the regulatory_id for the insurance company must be present
+    **Reason:** to uniquely identify the InsuranceAsset, the 'regulatory_id' for the insurance company must be present
     
+PUT InsuranceAsset
+----
+> **NEW!**
+Update an InsuranceAsset.
+
+* **URL**
+
+  /api/v1/insurance_assets/:uid
+
+* **Method:**
+
+  `PUT`
+  
+*  **URL Params**
+ 
+   `uid=[string]`
+   
+* **Data Params**
+
+   `see InsuranceAsset model definition`
+
+* **Success Response:**
+  
+  * **Code:** 201 <br />
+    **Content:** `see InsuranceAsset model definition`
+ 
+* **Error Response:**
+
+  * **Code:** 404 INSURANCE_ASSET NOT FOUND <br />
+    **Content:** `{ errors: "INSURANCE_ASSET NOT FOUND" }`
+
 
 MODEL CaseFile
 ----
@@ -509,6 +543,24 @@ Only to be used when creating a Party to indicate in which CaseFile to create th
 | :profession | String |  |
 | :id_valid_from | Date |  |
 | :id_valid_until | Date |  |
+
+MODEL InsuranceAsset
+----
+An InsuranceAsset is a Life Insurance Policy.  The unique key for an InsuranceAsset is the combination of the 'policy_reference' and the Insurance Company, which is identified with the 'regularory_id'.
+
+#### Identifiers
+
+| Attributes  | Type | Notes |
+| :--- | :--- | :--- |
+| :insurance_asset_uid  | String | the myFaro UID which is returned to the Application after creation |
+| :policy_reference | String | a unique identifier used by the issuing insurance company; versioning pre- or suffixes should not be used as we don't keep versions for the same policy |
+| :insurance_company_regulatory_id | String | the unique identifier issued by the national regulator (FSMA in BE or CAA in LUX) |
+| :insuring_party_uid | the myFaro UID of the Party which holds or subscribes to the policy | 
+
+#### Attributes
+
+| Attributes  | Type | Notes |
+| :--- | :--- | :--- |
 
 OTHER
 ----
