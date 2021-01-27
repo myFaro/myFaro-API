@@ -324,7 +324,7 @@ Update a Party.
 
 DEL Party
 ----
-Delete a Party.  This is only allowed for Parties who don't have any remaining assets in a case_file and who are not the key parties in a case_file.  
+Delete a Party.  This is only allowed for Parties who are not the key parties in a case_file, don't have any remaining assets and are connected to only one case_file.  
 
 * **URL**
 
