@@ -350,7 +350,7 @@ Delete a Party.  This is only allowed for Parties who are not the key parties in
 
   OR
   
-  * **Code:** 404 PARTY NOT DELETABLE <br />
+  * **Code:** 422 PARTY NOT DELETABLE <br />
     **Content:** `{ errors: "PARTY NOT DELETABLE" }`
 
 GET InsuranceAsset
