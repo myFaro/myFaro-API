@@ -144,10 +144,12 @@ Updates a CaseFile, including Advisors.  Parties are added and removed via the C
 
 TODO
 ----
-POST CaseFile/Party
-Add a Party to a CaseFile with a certain PartyRole.
-DEL CaseFile/Party
-Remove a Party from a CaseFile
+POST CaseFile/Party<br />
+Add a Party to a CaseFile with a certain PartyRole.<br />
+DEL CaseFile<br />
+Remove a CaseFile<br />
+DEL CaseFile/Party<br />
+Remove a Party from a CaseFile<br />
 
 GET Party
 ----
@@ -300,7 +302,7 @@ Update a Party.
 *  **URL Params**
  
    `uid=[string]`
-
+   
 * **Data Params**
 
    `see Party model definition`
@@ -320,9 +322,35 @@ Update a Party.
   * **Code:** 404 CASE FILE NOT FOUND <br />
     **Content:** `{ errors: "CASE FILE NOT FOUND" }`
 
-TODO
+DEL Party
 ----
-DEL Party.  If the last Party is deleted then also delete the CaseFile.
+Delete a Party.  This is only allowed for Parties who don't have any remaining assets in a case_file and who are not the key parties in a case_file.  
+
+* **URL**
+
+  /api/v1/parties/:uid
+
+* **Method:**
+
+  `DEL`
+  
+*  **URL Params**
+ 
+   `uid=[string]`
+
+* **Success Response:**
+  
+  * **Code:** 200 <br />
+ 
+* **Error Response:**
+
+  * **Code:** 404 PARTY NOT FOUND <br />
+    **Content:** `{ errors: "PARTY NOT FOUND" }`
+
+  OR
+  
+  * **Code:** 404 PARTY NOT DELETABLE <br />
+    **Content:** `{ errors: "PARTY NOT DELETABLE" }`
 
 MODEL CaseFile
 ----
