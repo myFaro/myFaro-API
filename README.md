@@ -559,6 +559,18 @@ An InsuranceAsset is a Life Insurance Policy.  The unique key for an InsuranceAs
 
 #### Attributes
 
+Policy as per https://www.telebib2.org/MIGFrameset.asp?MigId=815&lang=n
+
+| Attributes  | Type | Notes |
+| :--- | :--- | :--- |
+
+Insured Parties as per https://www.telebib2.org/MIGFrameset.asp?MigId=805&lang=n (COMMON) and https://www.telebib2.org/MIGFrameset.asp?MigId=803&lang=n (PERSON)
+
+| Attributes  | Type | Notes |
+| :--- | :--- | :--- |
+
+Coverage Objects as per https://www.telebib2.org/MIGFrameset.asp?MigId=813&lang=n (COMMON), https://www.telebib2.org/MIGFrameset.asp?MigId=811&lang=n (LIFE) and https://www.telebib2.org/MIGFrameset.asp?MigId=665&lang=n (DISABILITY)
+
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
 
