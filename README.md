@@ -82,7 +82,7 @@ curl --location --request POST 'http://<<myfarohost>>/api/v1/broker/link' \
 }
 ```
 
-GET Casefile
+GET CaseFile
 ---
 > **NEW!**
 Get the details for a CaseFile using the myFaro uid.  This includes the information on the Parties and Advisors which are assigned to the CaseFile.
@@ -351,6 +351,78 @@ Delete a Party.  This is only allowed for Parties who are not the key parties in
   
   * **Code:** 404 PARTY NOT DELETABLE <br />
     **Content:** `{ errors: "PARTY NOT DELETABLE" }`
+
+GET InsuranceAsset
+----
+Get the details for an Insurance Policy using the myFaro uid.
+
+* **URL**
+
+  /api/v1/insurance_assets/:uid
+
+* **Method:**
+
+  `GET`
+  
+*  **URL Params**
+
+   **Required:**
+ 
+   `uid=[string]`
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** `see InsuranceAsset model definition`
+ 
+* **Error Response:**
+
+  * **Code:** 404 INSURANCE_ASSET NOT FOUND <br />
+    **Content:** `{ errors : "PARTY NOT FOUND" }`
+    
+POST InsuranceAsset
+----
+Create a new Insurance Policy for an Insuring Party and an Insurance Company.
+
+* **URL**
+
+  /api/v1/insurance_assets
+
+* **Method:**
+
+  `POST`
+  
+*  **URL Params**
+ 
+   `none`
+
+* **Data Params**
+
+   `see InsuranceAsset model definition`
+
+* **Success Response:**
+  
+  * **Code:** 201 <br />
+    **Content:** `see InsuranceAsset model definition`
+ 
+* **Error Response:**
+
+  * **Code:** 422 NO UNIQUE INSURANCE_ASSET IDENTIFIER PRESENT <br />
+    **Content:** `{ errors : "NO UNIQUE INSURANCE_ASSET IDENTIFIER PRESENT" }` <br />
+    **Reason:** to identify the insurance_asset, the policy_reference must be provided
+    
+  OR
+
+  * **Code:** 422 NO INSURING PARTY UID PRESENT <br />
+    **Content:** `{ errors : "NO INSURING PARTY UID PRESENT" }` <br />
+    **Reason:** to identify the party which is holding the InsuranceAsset, the Party UID must be present
+    
+  OR
+
+  * **Code:** 422 NO INSURANCE COMPANY IDENTIFIER PRESENT <br />
+    **Content:** `{ errors : "NO INSURANCE COMPANY IDENTIFIER PRESENT" }` <br />
+    **Reason:** to uniquely identify the insurance_asset, the regulatory_id for the insurance company must be present
+    
 
 MODEL CaseFile
 ----
