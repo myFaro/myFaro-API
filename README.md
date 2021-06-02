@@ -574,6 +574,27 @@ Coverage Objects as per https://www.telebib2.org/MIGFrameset.asp?MigId=813&lang=
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
 
+MODEL ActionItem - TO BE IMPLEMENTED
+----
+An action item is an opportunity or a administrative task connected to a party.  The combination of a party and an action_item_key is unique.
+
+#### Identifiers
+
+| Attributes  | Type | Notes |
+| :--- | :--- | :--- |
+| :party_uid  | String | the myFaro UID for a party |
+| :action_item_key | String | a unique identifier for the type of action |
+
+#### Attributes
+
+| Attributes  | Type | Notes |
+| :--- | :--- | :--- |
+| :action_type | String | </br> info</br> process</br> analyse</br> optimise</br> execute |
+| :action_name | String | naam van de opportuniteit of taak in de taal van de partij |
+| :action_description | String | beschrijving van de opportuniteit of taak in de taal van de partij |
+| :status_level | String | indication of the level of existing coverage:</br> empty</br> half</br> full
+| :completed_at | Date | Date on which the action was completed in myFaro |
+
 OTHER
 ----
 
