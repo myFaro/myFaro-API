@@ -590,10 +590,10 @@ An action item is an opportunity or a administrative task connected to a party. 
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
 | :action_type | String | </br> info</br> process</br> analyse</br> optimise</br> execute |
-| :action_name | String | naam van de opportuniteit of taak in de taal van de partij |
-| :action_description | String | beschrijving van de opportuniteit of taak in de taal van de partij |
+| :action_name | String | name of the opportunity or administrative task in the party's locale |
+| :action_description | String | description of the opportunity or administrative task in the party's locale |
 | :status_level | String | indication of the level of existing coverage:</br> empty</br> half</br> full
-| :completed_at | Date | Date on which the action was completed in myFaro |
+| :completed_at | Date | date on which the action was completed in myFaro |
 
 OTHER
 ----
