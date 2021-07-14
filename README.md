@@ -605,185 +605,37 @@ https://www.telebib2.org/MIGFrameset.asp?MigId=665&lang=n (DISABILITY)
 | :FiscalStatusOfTheLifeInsurancePremiumCode | String | Fiscaliteit levensverzekeringspremie |
 | :YieldGuaranteeCode | String | Rendementsgarantie |
 | :RiskLabelCode | String | Risico label |
-| : | String |  |
-| : | String |  |
-
-
+| :PaymentForLongTermDisabilityCode | String | Type uitkering voor langdurige invaliditeit |
+| :IncapacityCauseCoveredCode | String | Gedekte oorzaak ongeschiktheid |
+| :IncapacityCoveredCode | String | Gedekt type ongeschiktheid |
+| :AdvanceOnPolicyBinary | Float | Voorschot op polis |
+| :AdvanceOnAiirGuaranteeBinary | Float | Voorschot op waarborg AVRI |
+| :Contract genereert winstdeelname | Boolean | ContractGeneratesProfitsharingBinary |
+| :PerformanceTaxationLiabilityBinary | String | Onderworpenheid van de prestatie |
+| :MinimumAmountInCaseOfDeathBinary | Float | Minimaal bedrag in overlijden |
+| :SupplementalAmountInCaseOfDeathBinary | Float | Bijkomend bedrag in overlijden |
+| :DeathBenefitDecreasingBinary | Boolean | Afnemend overlijdenskapitaal |
+| :DeathBenefitCalculatedBinary | Boolean | Overlijdenskapitaal berekend in functie van gestorte premies |
+| :PartialDisabilityCoveredBinary | String | Gedeeltelijke ongeschiktheid gedekt |
+| :LifeBenefitAmount | Float | Kapitaal bij leven |
+| :ReserveValueAmount | Float | Waarde van de reserve |
+| :AcquiredBonusLoadingForLifeAmount | Float | Verworven winstdeelname bij leven |
+| :DeathBenefitAmount | Float | Kapitaal bij overlijden |
+| :SupplementalAmountInCaseOfDeathAmount | Float | Bijkomend bedrag bij overlijden |
+| :YearlyInterestInLifeInsuranceAmount | Float | Jaarlijkse rente (Levensverzekering) |
+| :CautiousPrognosisFinalCapitalAmount | Float | Voorzichtige pronostiek eindkapitaal |
+| :NormalPrognosisFinalCapitalAmount | Float | Normale pronostiek eindkapitaal |
+| :OptimisticPrognosisFinalCapitalAmount | Float | Optimistische pronostiek eindkapitaal |
+| :EndCapitalFiscallyNoPremiumsAmount | Float | Fiscaal kapitaal zonder premies |
+| :EndCapitalFiscallyPremiumsPaidAmount | Float | Fiscaal kapitaal met premies |
+| : | Float |  |
+| : | Float |  |
+| : | Float |  |
+| : | Float |  |
+| : | Float |  |
+| : | Float |  |
 	
-ATT+2200 - ( Type uitkering voor langdurige invaliditeit ) - (0..1) - (PaymentForLongTermDisabilityCode)
-18
 	
-0
-	
-ATT+2260 - ( Gedekte oorzaak ongeschiktheid ) - (0..1) - (IncapacityCauseCoveredCode)
-19
-	
-0
-	
-ATT+2262 - ( Gedekt type ongeschiktheid ) - (0..1) - (IncapacityCoveredCode)
-20
-	
-0
-	
-BIN+A063 - ( Voorschot op polis ) - (0..1) - (AdvanceOnPolicyBinary)
-21
-	
-0
-	
-BIN+A064 - ( Voorschot op waarborg AVRI ) - (0..1) - (AdvanceOnAiirGuaranteeBinary)
-22
-	
-0
-	
-BIN+1010 - ( Contract genereert winstdeelname ) - (0..1) - (ContractGeneratesProfitsharingBinary)
-23
-	
-0
-	
-BIN+1020 - ( Contract onderhevig aan perequatie ) - (0..1) - (ContractSubjectToEqualizationBinary)
-24
-	
-0
-	
-BIN+1405 - ( Onderworpenheid van de prestatie ) - (0..1) - (PerformanceTaxationLiabilityBinary)
-25
-	
-0
-	
-BIN+1202 - ( Minimaal bedrag in overlijden ) - (0..1) - (MinimumAmountInCaseOfDeathBinary)
-26
-	
-0
-	
-BIN+1203 - ( Bijkomend bedrag in overlijden ) - (0..1) - (SupplementalAmountInCaseOfDeathBinary)
-27
-	
-0
-	
-BIN+1204 - ( Bijkomend bedrag eerst toegepast ) - (0..1) - (SupplementalAmountAppliedFirstBinary)
-28
-	
-0
-	
-BIN+1205 - ( Afnemend overlijdenskapitaal ) - (0..1) - (DeathBenefitDecreasingBinary)
-29
-	
-0
-	
-BIN+1206 - ( Overlijdenskapitaal berekend in functie van gestorte premies ) - (0..1) - (DeathBenefitCalculatedBinary)
-30
-	
-0
-	
-BIN+1207 - ( Overlijdenskapitaal anders vastgelegd ) - (0..1) - (DeathBenefitDefinedDifferentlyBinary)
-31
-	
-0
-	
-BIN+2261 - ( Gedeeltelijke ongeschiktheid gedekt ) - (0..1) - (PartialDisabilityCoveredBinary)
-32
-	
-0
-	
-BIN+1625 - ( Lijfrente overgaand op 2de hoofd ) - (0..1) - (AnnuityTransposingTo2ndHeadBinary)
-33
-	
-0
-	
-MOA+023 - ( Kapitaal bij leven ) - (0..1) - (LifeBenefitAmount)
-34
-	
-0
-	
-MOA+186 - ( Waarde van de reserve ) - (0..1) - (ReserveValueAmount)
-35
-	
-0
-	
-MOA+025 - ( Toekenning winstdeelname leven van het jaar ) - (0..1) - (YearlyAmountOfBonusLoadingForLifeAmount)
-36
-	
-0
-	
-MOA+024 - ( Verworven winstdeelname bij leven ) - (0..1) - (AcquiredBonusLoadingForLifeAmount)
-37
-	
-0
-	
-MOA+093 - ( Wijziging kapitaal leven ) - (0..1) - (ChangeInLifeBenefitAmount)
-38
-	
-0
-	
-MOA+026 - ( Kapitaal bij overlijden ) - (0..1) - (DeathBenefitAmount)
-39
-	
-0
-	
-MOA+028 - ( Toekenning winstdeelname overlijden van het jaar ) - (0..1) - (YearlyAmountOfBonusLoadingForDeathAmount)
-40
-	
-0
-	
-MOA+027 - ( Verworven winstdeelname bij overlijden ) - (0..1) - (AcquiredBonusLoadingForDeathAmount)
-41
-	
-0
-	
-MOA+094 - ( Wijziging kapitaal overlijden ) - (0..1) - (ChangeInDeathBenefitAmount)
-42
-	
-0
-	
-MOA+180 - ( Jaarlijkse rente (Levensverzekering) ) - (0..1) - (YearlyInterestInLifeInsuranceAmount)
-43
-	
-0
-	
-MOA+042 - ( Kapitaal - Jaarvergoeding ) - (0..1) - (CapitalAnnualCompensationAmount)
-44
-	
-0
-	
-MOA+191 - ( Bijkomend bedrag bij overlijden ) - (0..1) - (SupplementalAmountInCaseOfDeathAmount)
-45
-	
-0
-	
-MOA+218 - ( Voorzichtige pronostiek eindkapitaal ) - (0..1) - (CautiousPrognosisFinalCapitalAmount)
-46
-	
-0
-	
-MOA+219 - ( Normale pronostiek eindkapitaal ) - (0..1) - (NormalPrognosisFinalCapitalAmount)
-47
-	
-0
-	
-MOA+220 - ( Optimistische pronostiek eindkapitaal ) - (0..1) - (OptimisticPrognosisFinalCapitalAmount)
-48
-	
-0
-	
-MOA+221 - ( Fiscaal kapitaal zonder premies ) - (0..1) - (EndCapitalFiscallyNoPremiumsAmount)
-49
-	
-0
-	
-MOA+222 - ( Fiscaal kapitaal met premies ) - (0..1) - (EndCapitalFiscallyPremiumsPaidAmount)
-50
-	
-0
-	
-MOA+223 - ( Afkoopwaarde ) - (0..1) - (SurrenderValueAmount)
-51
-	
-0
-	
-MOA+224 - ( Kapitaal leven als theoretische rente ) - (0..1) - (LifeCapitalConvertedIntoTheoreticalAnnuityAmount)
-52
-	
-0
 	
 QTY+129 - ( Vermenigvuldigingscoëfficiënt AVRO ) - (0..1) - (AIARMultiplicatorQuantity)
 53
