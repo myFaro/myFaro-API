@@ -457,6 +457,45 @@ Update an InsuranceAsset.
   * **Code:** 404 INSURANCE_ASSET NOT FOUND <br />
     **Content:** `{ errors: "INSURANCE_ASSET NOT FOUND" }`
 
+POST Documents
+----
+> **NEW!**
+Upload a document for an entity.
+
+* **URL**
+
+   /api/v1/case_files/:uid/documents
+   /api/v1/parties/:uid/documents
+   /api/v1/insurance_assets/:uid/documents
+
+* **Method:**
+
+  `POST`
+  
+*  **URL Params**
+ 
+   `uid=[string]`
+   
+* **Data Params**
+
+   :document - a base64 encoded file
+
+* **Success Response:**
+  
+  * **Code:** 201 <br />
+    **Content:** `DOCUMENT SAVED`
+ 
+* **Error Response:**
+
+  * **Code:** 404 ENTITY NOT FOUND <br />
+    **Content:** `{ errors: "ENTITY NOT FOUND" }`
+
+  * **Code:** 422 NO DOCUMENT PRESENT <br />
+    **Content:** `{ errors: "NO DOCUMENT PRESENT" }`
+  
+  * **Code:** 422 DOCUMENT NOT SAVED <br />
+    **Content:** `{ errors: "DOCUMENT NOT SAVED" }`
+
 
 MODEL CaseFile
 ----
