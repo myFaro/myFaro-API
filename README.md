@@ -555,7 +555,6 @@ An InsuranceAsset is a Life Insurance Policy.  The unique key for an InsuranceAs
 | :insurance_asset_uid  | String | the myFaro UID which is returned to the Application after creation |
 | :PolicyReference | String | a unique identifier used by the issuing insurance company; versioning pre- or suffixes should not be used as we don't keep versions for the same policy |
 | :insurance_company_regulatory_id | String | the unique identifier issued by the national regulator (FSMA in BE or CAA in LUX) |
-| :insuring_party_uid | the myFaro UID of the Party which holds or subscribes to the policy | 
 
 #### Attributes
 
@@ -576,19 +575,11 @@ Policy as per https://www.telebib2.org/MIGFrameset.asp?MigId=815&lang=n
 | :NetPremiumAmount  | Float | Netto premie |
 | :GrossPremiumAmount  | Float | Bruto premie |
 | :PartyInsurer  | String | Verzekeraar |
-| :CompanyNumberReference  | String | Ondernemingsnummer |
-| :PartyMainPolicyHolder | String | Verzekeringsnemer |
-| :PartyAdditionalPolicyHolder | String | Medeverzekeringsnemer |
-| :InsuredParties | Array | see InsuredParties |
+| :CompanyNumberReference  | String | Ondernemingsnummer van de verzekeraar |
+| :PartyMainPolicyHolder | String | the myFaro UID of the Party which holds or subscribes to the policy Verzekeringsnemer |
+| :PartyAdditionalPolicyHolder | String | the myFaro UID of the Party which holds or subscribes to the policy Medeverzekeringsnemer |
+| :InsuredParties | Array | array of the myFaro UID of the Parties that are insured by the policy |
 | :Guarantees | Array | see Guarantees |
-
-InsuredParties as per https://www.telebib2.org/MIGFrameset.asp?MigId=805&lang=n (COMMON) and https://www.telebib2.org/MIGFrameset.asp?MigId=803&lang=n (PERSON)
-
-| Attributes  | Type | Notes |
-| :--- | :--- | :--- |
-| : | String |  |
-| : | String |  |
-| : | String |  |
 
 Guarantees as per https://www.telebib2.org/MIGFrameset.asp?MigId=813&lang=n (COMMON), https://www.telebib2.org/MIGFrameset.asp?MigId=811&lang=n (LIFE) and https://www.telebib2.org/MIGFrameset.asp?MigId=665&lang=n (DISABILITY)
 
