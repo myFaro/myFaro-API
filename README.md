@@ -553,7 +553,7 @@ An InsuranceAsset is a Life Insurance Policy.  The unique key for an InsuranceAs
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
 | :insurance_asset_uid  | String | the myFaro UID which is returned to the Application after creation |
-| :policy_reference | String | a unique identifier used by the issuing insurance company; versioning pre- or suffixes should not be used as we don't keep versions for the same policy |
+| :PolicyReference | String | a unique identifier used by the issuing insurance company; versioning pre- or suffixes should not be used as we don't keep versions for the same policy |
 | :insurance_company_regulatory_id | String | the unique identifier issued by the national regulator (FSMA in BE or CAA in LUX) |
 | :insuring_party_uid | the myFaro UID of the Party which holds or subscribes to the policy | 
 
@@ -563,6 +563,242 @@ Policy as per https://www.telebib2.org/MIGFrameset.asp?MigId=815&lang=n
 
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
+| :PolicyProductcode  | String | Polistype |
+| :ProductNameProductcode  | String | Product |
+| :ContractInceptionDate  | Date | Initiële aanvangsdatum van het contract |
+| :ExpiryDate  | String | Afloopdatum |
+| :ContractStatusCode  | String | Status van de polis |
+| :MonetaryUnitCode  | String | Munteenheid |
+| :DegreeOfTaxExemptionCode  | String | Graad van vrijstelling van taks |
+| :MortgageClausePresenceBinary  | Boolean | Aanwezigheid hypotheekclausule |
+| :PledgedContractBinary  | Boolean | Contract in onderpand |
+| :BasePremiumAmount | Float | Technische premie of zuivere premie |
+| :NetPremiumAmount  | Float | Netto premie |
+| :GrossPremiumAmount  | Float | Bruto premie |
+| :  | String |  |
+	
+	  	
+	  	
+CLS+002 - ( Tekstuele clausule ) -(0..n) -(Min. 33% of data expected) - (ClauseLiteral)
+122
+	
+1
+	  	
+RFF+031 - ( Nummer clausule ) -(0..1) - (ClauseReference)
+123
+	
+1
+	  	
+FTX+052 - ( Clausule, titel ) -(1..1) - (ClauseTitleText)
+124
+	
+1
+	  	
+FTX+053 - ( Clausule, tekst ) -(1..n) - (ClauseTextText)
+125
+	
+1
+	  	
+XRT+1 - ( ) -(1..1) - ()
+126
+	
+1
+	  	
+XRH+1 - ( ) -(1..1) - ()
+127
+	
+1
+	  	
+CLS+010 - ( IPID (KID non-life) ) -(0..n) - (ClauseIPIDIsKIDInNonLife)
+128
+	
+1
+	  	
+RFF+110 - ( Referte IPID (KID non-life) ) -(1..1) - (IPIDAsIsKIDNonLifeReference)
+129
+	
+1
+	  	
+XRT+1 - ( ) -(1..1) - ()
+130
+	
+1
+	  	
+XRH+1 - ( ) -(1..1) - ()
+131
+	
+1
+	  	
+CLS+011 - ( KID (Life/Investment) ) -(0..n) - (ClauseKIDInLifeInvestment)
+132
+	
+1
+	  	
+RFF+111 - ( Referte KID (Life/Investment) ) -(1..1) - (KIDInLifeAndinvestmentReference)
+133
+	
+1
+	  	
+XRT+1 - ( ) -(1..1) - ()
+134
+	
+1
+	  	
+XRH+1 - ( ) -(1..1) - ()
+135
+	
+1
+	  	
+PTY+006 - ( Verzekeraar ) -(1..1) - (PartyInsurer)
+136
+	
+1
+	  	
+RFF+075 - ( Ondernemingsnummer ) -(0..1) - (CompanyNumberReference)
+137
+	
+1
+	  	
+RFF+076 - ( Vestigingseenheidsnummer ) -(0..1) - (EstablishmentUnitNumberReference)
+138
+	
+1
+	  	
+RFF+107 - ( LEI ) -(0..1) - (LegalEntityIdentifierReference)
+139
+	
+1
+	  	
+ATT+A020 - ( Type maatschappij bij medeverzekering ) -(0..1) - (InsurerInCaseOfCoInsuranceCode)
+140
+	
+1
+	  	
+XRT+1 - ( ) -(1..1) - ()
+141
+	
+1
+	  	
+XRH+1 - ( ) -(1..1) - ()
+142
+	
+1
+	  	
+PTY+002 - ( Tussenpersoon ) -(1..1) - (PartyIntermediary)
+143
+	
+1
+	  	
+RFF+075 - ( Ondernemingsnummer ) -(0..1) - (CompanyNumberReference)
+144
+	
+1
+	  	
+RFF+076 - ( Vestigingseenheidsnummer ) -(0..1) - (EstablishmentUnitNumberReference)
+145
+	
+1
+	  	
+RFF+107 - ( LEI ) -(0..1) - (LegalEntityIdentifierReference)
+146
+	
+1
+	  	
+RFF+003 - ( Referte polis tussenpersoon ) -(0..1) - (BrokerPolicyReference)
+147
+	
+2
+	  	
+XRH+2 - ( ) -( 1..1) - ()
+148
+	
+2
+	  	
+RPT+210 - ( Correspondent ) -( 0..1) - (RelatedCorrespondentOrManager)
+149
+	
+2
+	  	
+NME+001 - ( Naam ) -( 0..1) - (OfficialName)
+150
+	
+2
+	  	
+COM+006 - ( Telefoon bureau ) -( 0..1) - (OfficeTelephoneCommID)
+151
+	
+2
+	  	
+COM+002 - ( Fax ) -( 0..1) - (FaxCommID)
+152
+	
+2
+	  	
+COM+003 - ( e-Mail ) -( 0..1) - (EmailAddressCommID)
+153
+	
+2
+	  	
+XRT+2 - ( ) -( 1..1) - ()
+154
+	
+1
+	  	
+XRT+1 - ( ) -(1..1) - ()
+155
+	
+1
+	  	
+XRH+1 - ( ) -(1..1) - ()
+156
+	
+1
+	  	
+PTY+003 - ( Verzekeringsnemer ) -(1..1) -(Extendible with one of: PTY003PP_202201, PTY003PM_202201, PTY003Grp_202201) - (PartyMainPolicyHolder)
+157
+	
+1
+	  	
+XRT+1 - ( ) -(1..1) - ()
+158
+	
+1
+	  	
+XRH+1 - ( ) -(1..1) - ()
+159
+	
+1
+	  	
+PTY+017 - ( Medeverzekeringsnemer ) -(0..1) -(Extendible with one of: PTY003PP_202201) - (PartyAdditionalPolicyHolder)
+160
+	
+1
+	  	
+XRT+1 - ( ) -(1..1) - ()
+161
+	
+1
+	  	
+XRH+1 - ( ) -(1..1) - ()
+162
+	
+1
+	  	
+ROD+xxx - ( Object ) -(1..n) -(Extendible with one of: RODGen_202201) - ()
+163
+	
+1
+	  	
+XRT+1 - ( ) -(1..1) - ()
+164
+	
+0
+	
+XET+01 - ( Contract ) - (1..1) - (ContractExchangeUnitTrailer)
+
+
+
+
 
 Insured Parties as per https://www.telebib2.org/MIGFrameset.asp?MigId=805&lang=n (COMMON) and https://www.telebib2.org/MIGFrameset.asp?MigId=803&lang=n (PERSON)
 
