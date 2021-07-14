@@ -581,7 +581,7 @@ Policy as per https://www.telebib2.org/MIGFrameset.asp?MigId=815&lang=n
 | :InsuredParties | Array | array of the myFaro UID of the Parties that are insured by the policy |
 | :Guarantees | Array | see Guarantees |
 
-Guarantees 
+#### Guarantees 
 https://www.telebib2.org/MIGFrameset.asp?MigId=813&lang=n (COMMON)
 https://www.telebib2.org/MIGFrameset.asp?MigId=811&lang=n (LIFE)
 https://www.telebib2.org/MIGFrameset.asp?MigId=665&lang=n (DISABILITY)
@@ -610,7 +610,7 @@ https://www.telebib2.org/MIGFrameset.asp?MigId=665&lang=n (DISABILITY)
 | :IncapacityCoveredCode | String | Gedekt type ongeschiktheid |
 | :AdvanceOnPolicyBinary | Float | Voorschot op polis |
 | :AdvanceOnAiirGuaranteeBinary | Float | Voorschot op waarborg AVRI |
-| :Contract genereert winstdeelname | Boolean | ContractGeneratesProfitsharingBinary |
+| :ContractGeneratesProfitsharingBinary | Boolean | Contract genereert winstdeelname |
 | :PerformanceTaxationLiabilityBinary | String | Onderworpenheid van de prestatie |
 | :MinimumAmountInCaseOfDeathBinary | Float | Minimaal bedrag in overlijden |
 | :SupplementalAmountInCaseOfDeathBinary | Float | Bijkomend bedrag in overlijden |
@@ -628,158 +628,30 @@ https://www.telebib2.org/MIGFrameset.asp?MigId=665&lang=n (DISABILITY)
 | :OptimisticPrognosisFinalCapitalAmount | Float | Optimistische pronostiek eindkapitaal |
 | :EndCapitalFiscallyNoPremiumsAmount | Float | Fiscaal kapitaal zonder premies |
 | :EndCapitalFiscallyPremiumsPaidAmount | Float | Fiscaal kapitaal met premies |
-| : | Float |  |
-| : | Float |  |
-| : | Float |  |
-| : | Float |  |
-| : | Float |  |
-| : | Float |  |
+| :AIARMultiplicatorQuantity | Float | Vermenigvuldigingscoëfficiënt AVRO |
+| :RateOnRemainingBalanceDuedPercentage | Float | Intrestpercentage schuldsaldo |
+| :InterventionAsOfIncapacityPercentage | Float | Tussenkomst zodra percentage ongeschiktheid |
+| :PermanentIncapacityTresholdPercentage | Float | Drempel totale blijvende invaliditeit |
+| :GrowthOfTheAllowancePercentage | Float | Rente invaliditeit - aangroeipercentage |
+| :YearlyGrowthOfTheAllowancePercentage | Float | Rente invaliditeit - jaarlijks aangroeipercentage |
+| :GuaranteedInterestRateLifePercentage | Float | Gewaarborgde rentevoet leven |
+| :GuaranteedInterestRateOnReservePercentage | Float | Gewaarborgde rentevoet op de reserve |
+| :RateOfBonusLoadingInCaseOfLifePercentage | Float | Percentage winstdeelname (leven) |
+| :BonusLoadingInCaseOfDeathPercentage | Float | Percentage winstdeelname (overlijden) |
+| :CompensationDuration | Float | Duur vergoeding |
+| :PartialDisabilityCoveredBinary | Boolean | Gedeeltelijke ongeschiktheid gedekt |
+| :Beneficiaries | Array | See Beneficiaries |
+| :Funds | Array | See Funds |
 	
-	
-	
-QTY+129 - ( Vermenigvuldigingscoëfficiënt AVRO ) - (0..1) - (AIARMultiplicatorQuantity)
-53
-	
-0
-	
-PCD+008 - ( Intrestpercentage schuldsaldo ) - (0..1) - (RateOnRemainingBalanceDuedPercentage)
-54
-	
-0
-	
-PCD+012 - ( Tussenkomst zodra percentage ongeschiktheid ) - (0..1) - (InterventionAsOfIncapacityPercentage)
-55
-	
-0
-	
-PCD+072 - ( Drempel totale blijvende invaliditeit ) - (0..1) - (PermanentIncapacityTresholdPercentage)
-56
-	
-0
-	
-PCD+044 - ( Rente invaliditeit - aangroeipercentage ) - (0..1) - (GrowthOfTheAllowancePercentage)
-57
-	
-0
-	
-PCD+070 - ( Rente invaliditeit - jaarlijks aangroeipercentage ) - (0..1) - (YearlyGrowthOfTheAllowancePercentage)
-58
-	
-0
-	
-PCD+057 - ( Gewaarborgde rentevoet leven ) - (0..1) - (GuaranteedInterestRateLifePercentage)
-59
-	
-0
-	
-PCD+058 - ( Gewaarborgde rentevoet op de reserve ) - (0..1) - (GuaranteedInterestRateOnReservePercentage)
-60
-	
-0
-	
-PCD+030 - ( Percentage winstdeelname (leven) ) - (0..1) - (RateOfBonusLoadingInCaseOfLifePercentage)
-61
-	
-0
-	
-PCD+041 - ( Percentage winstdeelname (overlijden) ) - (0..1) - (BonusLoadingInCaseOfDeathPercentage)
-62
-	
-0
-	
-PCD+062 - ( Percentage van de netto investering ) - (0..1) - (TheNetInvestmentPercentage)
-63
-	
-0
-	
-PCD+063 - ( Percentage van de herbelegging ) - (0..1) - (TheReInvestmentPercentage)
-64
-	
-0
-	
-PCD+064 - ( Waarborg overlijden in percentage assets ) - (0..1) - (DeathCoverPerAssetsPercentage)
+#### Beneficiaries
 
+| Attributes  | Type | Notes |
+| :--- | :--- | :--- |
+| : | Float |  |
+| : | Float |  |
+| : | Float |  |
+| : | Float |  |
 
-3
-	
-0
-	
-DTM+031 - ( Duur vergoeding ) - (0..1) - (CompensationDuration)
-4
-	
-0
-	
-ATT+2200 - ( Type uitkering voor langdurige invaliditeit ) - (0..1) - (PaymentForLongTermDisabilityCode)
-5
-	
-0
-	
-ATT+2260 - ( Gedekte oorzaak ongeschiktheid ) - (0..1) - (IncapacityCauseCoveredCode)
-6
-	
-0
-	
-ATT+2262 - ( Gedekt type ongeschiktheid ) - (0..1) - (IncapacityCoveredCode)
-7
-	
-0
-	
-BIN+21V9 - ( Overeengekomen indeplaatsstelling ) - (0..1) - (AgreedSubrogationBinary)
-8
-	
-0
-	
-BIN+2261 - ( Gedeeltelijke ongeschiktheid gedekt ) - (0..1) - (PartialDisabilityCoveredBinary)
-9
-	
-0
-	
-BIN+1625 - ( Lijfrente overgaand op 2de hoofd ) - (0..1) - (AnnuityTransposingTo2ndHeadBinary)
-10
-	
-0
-	
-MOA+026 - ( Kapitaal bij overlijden ) - (0..1) - (DeathBenefitAmount)
-11
-	
-0
-	
-MOA+036 - ( Kapitaal - Dagvergoeding ) - (0..1) - (CapitalDailyAllowanceAmount)
-12
-	
-0
-	
-MOA+037 - ( Kapitaal - Maximale uitkering ) - (0..1) - (CapitalMaximumBenefitAmount)
-13
-	
-0
-	
-MOA+042 - ( Kapitaal - Jaarvergoeding ) - (0..1) - (CapitalAnnualCompensationAmount)
-14
-	
-0
-	
-PCD+012 - ( Percentage tussenkomst ) - (0..1) - (InterventionAsOfIncapacityPercentage)
-15
-	
-0
-	
-PCD+072 - ( Drempel totale blijvende invaliditeit ) - (0..1) - (PermanentIncapacityTresholdPercentage)
-16
-	
-0
-	
-PCD+044 - ( Stijgingspercentage van de rente ) - (0..1) - (GrowthOfTheAllowancePercentage)
-17
-	
-0
-	
-PCD+070 - ( Rente - jaarlijks aangroeipercentage ) - (0..1) - (YearlyGrowthOfTheAllowancePercentage)
-18
-	
-
-
-BEGUNSTIGDEN
 
 66
 	
@@ -955,8 +827,15 @@ FTX+019 - ( Beschrijving ) -(0..1) - (DescriptionText)
 	
 1 
 
+#### Funds
 
-FONDSEN
+| Attributes  | Type | Notes |
+| :--- | :--- | :--- |
+| : | Float |  |
+| : | Float |  |
+| : | Float |  |
+| : | Float |  |
+
 
 118
 	
