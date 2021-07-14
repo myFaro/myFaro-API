@@ -582,8 +582,11 @@ Policy as per https://www.telebib2.org/MIGFrameset.asp?MigId=815&lang=n
 | :Guarantees | Array | see Guarantees |
 
 #### Guarantees 
+
 https://www.telebib2.org/MIGFrameset.asp?MigId=813&lang=n (COMMON)
+
 https://www.telebib2.org/MIGFrameset.asp?MigId=811&lang=n (LIFE)
+
 https://www.telebib2.org/MIGFrameset.asp?MigId=665&lang=n (DISABILITY)
 
 | Attributes  | Type | Notes |
@@ -647,185 +650,12 @@ https://www.telebib2.org/MIGFrameset.asp?MigId=665&lang=n (DISABILITY)
 
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
-| : | Float |  |
-| : | Float |  |
-| : | Float |  |
-| : | Float |  |
-
-
-66
-	
-1
-	  	
-PTY+014 - ( Begunstigde ) -(0..n) -(Min. 40% of data expected) - (PartyBeneficiary)
-67
-	
-1
-	  	
-NME+001 - ( Officiële naam ) -(0..1) - (OfficialName)
-68
-	
-1
-	  	
-ADR+002 - ( Adres ) -(0..1) - (OfficialAddress)
-69
-	
-1
-	  	
-ATT+1910 - ( Type standaardbegunstigde ) -(0..1) - (StandardBeneficiaryCode)
-70
-	
-1
-	  	
-ATT+1912 - ( Rang ) -(1..1) - (BeneficiaryRankOrderCode)
-71
-	
-1
-	  	
-ATT+1A10 - ( Type aannemende begunstigde ) -(0..1) - (AcceptingBeneficiaryCode)
-72
-	
-1
-	  	
-BIN+1911 - ( Begunstigde heeft contractvoordeel aanvaard ) -(0..1) - (BeneficiaryAcceptedTheContractualBenefitBinary)
-73
-	
-1
-	  	
-MOA+225 - ( Begunstigde - bedrag ) -(0..1) - (BeneficiaryAmount)
-74
-	
-1
-	  	
-PCD+073 - ( Begunstigde - quotum ) -(0..1) - (BeneficiaryQuotaPercentage)
-75
-	
-1
-	  	
-FTX+019 - ( Beschrijving ) -(0..1) - (DescriptionText)
-76
-	
-1
-	  	
-XRT+3 - ( ) -(1..1) - ()
-77
-	
-1
-	  	
-XRH+3 - ( ) -(1..1) - ()
-78
-	
-1
-	  	
-PTY+048 - ( Begunstigde bij leven ) -(0..n) -(Min. 40% of data expected) - (PartyBeneficiaryInCaseOfLife)
-79
-	
-1
-	  	
-NME+001 - ( Officiële naam ) -(0..1) - (OfficialName)
-80
-	
-1
-	  	
-ADR+002 - ( Adres ) -(0..1) - (OfficialAddress)
-81
-	
-1
-	  	
-ATT+1910 - ( Type standaardbegunstigde ) -(0..1) - (StandardBeneficiaryCode)
-82
-	
-1
-	  	
-ATT+1912 - ( Rang ) -(1..1) - (BeneficiaryRankOrderCode)
-83
-	
-1
-	  	
-ATT+1A10 - ( Type aannemende begunstigde ) -(0..1) - (AcceptingBeneficiaryCode)
-84
-	
-1
-	  	
-BIN+1911 - ( Begunstigde heeft contractvoordeel aanvaard ) -(0..1) - (BeneficiaryAcceptedTheContractualBenefitBinary)
-85
-	
-1
-	  	
-MOA+225 - ( Begunstigde - bedrag ) -(0..1) - (BeneficiaryAmount)
-86
-	
-1
-	  	
-PCD+073 - ( Begunstigde - quotum ) -(0..1) - (BeneficiaryQuotaPercentage)
-87
-	
-1
-	  	
-FTX+019 - ( Beschrijving ) -(0..1) - (DescriptionText)
-88
-	
-1
-	  	
-XRT+3 - ( ) -(1..1) - ()
-89
-	
-1
-	  	
-XRH+3 - ( ) -(1..1) - ()
-90
-	
-1
-	  	
-PTY+049 - ( Begunstigde bij overlijden ) -(0..n) -(Min. 40% of data expected) - (PartyBeneficiaryInCaseOfDeath)
-91
-	
-1
-	  	
-NME+001 - ( Officiële naam ) -(0..1) - (OfficialName)
-92
-	
-1
-	  	
-ADR+002 - ( Adres ) -(0..1) - (OfficialAddress)
-93
-	
-1
-	  	
-ATT+1910 - ( Type standaardbegunstigde ) -(0..1) - (StandardBeneficiaryCode)
-94
-	
-1
-	  	
-ATT+1912 - ( Rang ) -(1..1) - (BeneficiaryRankOrderCode)
-95
-	
-1
-	  	
-ATT+1A10 - ( Type aannemende begunstigde ) -(0..1) - (AcceptingBeneficiaryCode)
-96
-	
-1
-	  	
-BIN+1911 - ( Begunstigde heeft contractvoordeel aanvaard ) -(0..1) - (BeneficiaryAcceptedTheContractualBenefitBinary)
-97
-	
-1
-	  	
-MOA+225 - ( Begunstigde - bedrag ) -(0..1) - (BeneficiaryAmount)
-98
-	
-1
-	  	
-PCD+073 - ( Begunstigde - quotum ) -(0..1) - (BeneficiaryQuotaPercentage)
-99
-	
-1
-	  	
-FTX+019 - ( Beschrijving ) -(0..1) - (DescriptionText)
-100
-	
-1 
+| :PartyBeneficiary | String | the myFaro UID of the Party |
+| :StandardBeneficiaryCode | String | Type standaardbegunstigde |
+| :BeneficiaryRankOrderCode | String | Type aannemende begunstigde |
+| :BeneficiaryAcceptedTheContractualBenefitBinary | Boolean | Begunstigde heeft contractvoordeel aanvaard |
+| :BeneficiaryAmount | Float | Begunstigde - bedrag |
+| :BeneficiaryQuotaPercentage | Float | Begunstigde - quotum |
 
 #### Funds
 
