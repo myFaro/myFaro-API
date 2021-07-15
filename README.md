@@ -81,6 +81,7 @@ curl --location --request POST 'http://<<myfarohost>>/api/v1/broker/link' \
     }]
 }
 ```
+## CaseFile
 
 GET CaseFile
 ---
