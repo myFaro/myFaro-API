@@ -81,6 +81,26 @@ curl --location --request POST 'http://<<myfarohost>>/api/v1/broker/link' \
     }]
 }
 ```
+
+## Token Access
+
+### Access myFaro using access OAuth token
+
+Once a user has linked their application account with a myFaro account via Oauth, they can use the access token to login into myFaro and access myFaro pages based on their myFaro user rights.  The access token is only valid for 5 minutes.
+
+For instance, to show the case_file in myFaro:
+
+```
+http://<<myfarohost>>/case_files/5c44c7981143ec0080551ec3?locale=nl&parm_limit=0&access_token=68595f50b8d7184af3357a29af79824b22c31e49cfff7f78d7c6469feb3cfa99
+```
+
+
+### Access myFaro using JWT token
+
+You can ask for a JWT token to allow a Party to login to myFaro and/or request a resource from myFaro.  The user does not need to have linked their account using OAuth.
+
+
+
 ## CaseFile
 
 ### GET CaseFile
@@ -143,8 +163,8 @@ Updates a CaseFile, including Advisors.  Parties are added and removed via the C
   * **Code:** 404 CASE FILE NOT FOUND <br />
     **Content:** `{ errors: "CASE FILE NOT FOUND" }`
 
-TODO
-----
+### TODO
+
 POST CaseFile/Party<br />
 Add a Party to a CaseFile with a certain PartyRole.<br />
 DEL CaseFile<br />
@@ -152,8 +172,10 @@ Remove a CaseFile<br />
 DEL CaseFile/Party<br />
 Remove a Party from a CaseFile<br />
 
-GET Party
-----
+## Party
+
+### GET Party
+
 Get the details for a Party using the myFaro uid.
 
 * **URL**
@@ -180,8 +202,8 @@ Get the details for a Party using the myFaro uid.
   * **Code:** 404 PARTY NOT FOUND <br />
     **Content:** `{ errors : "PARTY NOT FOUND" }`
     
-SEARCH Party
-----
+### SEARCH Party
+
 Get a list of Parties matching a set of criteria.  Use parameters and pagination to receive 25 parties per call.
 
 * **URL**
@@ -228,8 +250,8 @@ Get a list of Parties matching a set of criteria.  Use parameters and pagination
   * **Code:** 404 NO PARTIES FOUND <br />
     **Content:** `{ errors : "NO PARTIES FOUND" }`
   
-POST Party
-----
+### POST Party
+
 Create a new Party.  Also create a CaseFile if it does not exist yet.
 
 * **URL**
@@ -288,8 +310,8 @@ Create a new Party.  Also create a CaseFile if it does not exist yet.
   * **Code:** 404 CASE FILE NOT SAVED <br />
     **Content:** `{ errors: "CASE FILE NOT SAVED" }`
     
-PUT Party
-----
+### PUT Party
+
 Update a Party.
 
 * **URL**
@@ -323,8 +345,8 @@ Update a Party.
   * **Code:** 404 CASE FILE NOT FOUND <br />
     **Content:** `{ errors: "CASE FILE NOT FOUND" }`
 
-DEL Party
-----
+### DEL Party
+
 > **NEW!**
 Delete a Party.  This is only allowed for Parties who are not the key parties in a case_file, don't have any remaining assets and are connected to only one case_file.  
 
@@ -354,8 +376,10 @@ Delete a Party.  This is only allowed for Parties who are not the key parties in
   * **Code:** 422 PARTY NOT DELETABLE <br />
     **Content:** `{ errors: "PARTY NOT DELETABLE" }`
 
-GET InsuranceAsset
-----
+## InsuranceAsset
+
+### GET InsuranceAsset
+
 > **NEW!**
 Get the details for an Insurance Policy using the myFaro uid.
 
@@ -383,8 +407,8 @@ Get the details for an Insurance Policy using the myFaro uid.
   * **Code:** 404 INSURANCE_ASSET NOT FOUND <br />
     **Content:** `{ errors : "PARTY NOT FOUND" }`
     
-POST InsuranceAsset
-----
+### POST InsuranceAsset
+
 > **NEW!**
 Create a new Insurance Policy for an Insuring Party and an Insurance Company.
 
@@ -427,8 +451,8 @@ Create a new Insurance Policy for an Insuring Party and an Insurance Company.
     **Content:** `{ errors : "NO INSURANCE COMPANY IDENTIFIER PRESENT" }` <br />
     **Reason:** to uniquely identify the InsuranceAsset, the 'regulatory_id' for the insurance company must be present
     
-PUT InsuranceAsset
-----
+### PUT InsuranceAsset
+
 > **NEW!**
 Update an InsuranceAsset.
 
@@ -458,8 +482,10 @@ Update an InsuranceAsset.
   * **Code:** 404 INSURANCE_ASSET NOT FOUND <br />
     **Content:** `{ errors: "INSURANCE_ASSET NOT FOUND" }`
 
-POST Documents
-----
+## Documents
+
+### POST Documents
+
 > **NEW!**
 Upload a document for an entity.
 
@@ -497,9 +523,10 @@ Upload a document for an entity.
   * **Code:** 422 DOCUMENT NOT SAVED <br />
     **Content:** `{ errors: "DOCUMENT NOT SAVED" }`
 
+## MODELS
 
-MODEL CaseFile
-----
+### MODEL CaseFile
+
 A CaseFile is a set of related Parties.  Each Party has a Role in the CaseFile.  A Party can only have the 'head_of_family_role' or 'partner' role in 1 CaseFile.  A CaseFile is created when creating the first Party.
 
 #### Identifiers
@@ -517,8 +544,8 @@ A CaseFile is a set of related Parties.  Each Party has a Role in the CaseFile. 
 | :advisors | Array | an array of the advisors for the CaseFile.   Each Advisor is represented by a hash.  See Advisor model definition |
 | :parties | Array | an array of the parties for the CaseFile.  Each Party is represented by a hash with the following keys: :party_uid, :broker_crm_id, :party_role.  See Party model definition |
 
-MODEL Advisor
-----
+### MODEL Advisor
+
 An Advisor is not a Party in a CaseFile but someone who 'advises' the Parties in some capacity.
 
 #### Attributes
@@ -530,8 +557,7 @@ An Advisor is not a Party in a CaseFile but someone who 'advises' the Parties in
 | :email | String |  |
 | :phone | String |  |
 
-MODEL Party
-----
+### MODEL Party
 
 #### Identifiers
 
@@ -584,8 +610,8 @@ Only to be used when creating a Party to indicate in which CaseFile to create th
 | :id_valid_from | Date |  |
 | :id_valid_until | Date |  |
 
-MODEL InsuranceAsset
-----
+### MODEL InsuranceAsset
+
 An InsuranceAsset is a Life Insurance Policy.  The unique key for an InsuranceAsset is the combination of the 'policy_reference' and the Insurance Company, which is identified with the 'regularory_id'.
 
 #### Identifiers
@@ -713,8 +739,8 @@ https://www.telebib2.org/MIGFrameset.asp?MigId=665&lang=n (DISABILITY)
 | :PercentageBoardingFeeAdditionalDepositsPercentage | Float | Percentage instapkosten aanvullende storting |
 | :FundNameText | String | Naam van het fonds |
 
-MODEL ActionItem - TO BE IMPLEMENTED
-----
+### MODEL ActionItem - TO BE IMPLEMENTED
+
 An action item is an opportunity or a administrative task connected to a party.  The combination of a party and an action_item_key is unique.
 
 #### Identifiers
@@ -733,16 +759,3 @@ An action item is an opportunity or a administrative task connected to a party. 
 | :action_description | String | description of the opportunity or administrative task in the party's locale |
 | :status_level | String | indication of the level of existing coverage:</br> empty</br> half</br> full
 | :completed_at | Date | date on which the action was completed in myFaro |
-
-OTHER
-----
-
-### Access myFaro using access token
-
-Once a user has linked their application account with a myFaro account via Oauth, they can use the access token to login into myFaro and access myFaro pages based on their myFaro user rights.  The access token is only valid for 5 minutes.
-
-For instance, to show the case_file in myFaro:
-
-```
-http://<<myfarohost>>/case_files/5c44c7981143ec0080551ec3?locale=nl&parm_limit=0&access_token=68595f50b8d7184af3357a29af79824b22c31e49cfff7f78d7c6469feb3cfa99
-```
