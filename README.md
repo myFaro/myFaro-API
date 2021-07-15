@@ -101,9 +101,6 @@ You can ask for a JWT token to allow a Party to login to myFaro and/or request a
 
 ### POST /api/v1/authorized_resources/token
 
-> **NEW!**
-Get the details for a CaseFile using the myFaro uid.  This includes the information on the Parties and Advisors which are assigned to the CaseFile.
-
 * **URL**
 
   /api/v1/authorized_resources/token
@@ -143,7 +140,6 @@ Get the details for a CaseFile using the myFaro uid.  This includes the informat
 
 ### GET CaseFile
 
-> **NEW!**
 Get the details for a CaseFile using the myFaro uid.  This includes the information on the Parties and Advisors which are assigned to the CaseFile.
 
 * **URL**
@@ -172,7 +168,6 @@ Get the details for a CaseFile using the myFaro uid.  This includes the informat
 
 ### PUT CaseFile
 
-> **NEW!**
 Updates a CaseFile, including Advisors.  Parties are added and removed via the CaseFile/Parties relationship.
 
 * **URL**
@@ -385,7 +380,6 @@ Update a Party.
 
 ### DEL Party
 
-> **NEW!**
 Delete a Party.  This is only allowed for Parties who are not the key parties in a case_file, don't have any remaining assets and are connected to only one case_file.  
 
 * **URL**
@@ -418,7 +412,6 @@ Delete a Party.  This is only allowed for Parties who are not the key parties in
 
 ### GET InsuranceAsset
 
-> **NEW!**
 Get the details for an Insurance Policy using the myFaro uid.
 
 * **URL**
@@ -447,7 +440,6 @@ Get the details for an Insurance Policy using the myFaro uid.
     
 ### POST InsuranceAsset
 
-> **NEW!**
 Create a new Insurance Policy for an Insuring Party and an Insurance Company.
 
 * **URL**
@@ -491,7 +483,6 @@ Create a new Insurance Policy for an Insuring Party and an Insurance Company.
     
 ### PUT InsuranceAsset
 
-> **NEW!**
 Update an InsuranceAsset.
 
 * **URL**
@@ -524,7 +515,6 @@ Update an InsuranceAsset.
 
 ### POST Documents
 
-> **NEW!**
 Upload a document for an entity.
 
 * **URL**
