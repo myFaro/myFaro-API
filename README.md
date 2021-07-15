@@ -122,9 +122,8 @@ Get the details for a CaseFile using the myFaro uid.  This includes the informat
  
    `resource=[string]`
     
-   When a Resource is provided, the User will be redirected to this Resource after succesfull login.  If no Resource or a non-supported Resource is provided, the User will be redirected to the CaseFile's default interface.
+   When a Resource is provided, the User will be redirected to this Resource after succesfull login.  If no Resource or a non-supported Resource is provided, the User will be redirected to the CaseFile's default interface.  The following list shows the supported Resources:
    
-    Supported resources:
    | Resource | Notes |
    | :--- | :--- |
   
@@ -138,8 +137,7 @@ Get the details for a CaseFile using the myFaro uid.  This includes the informat
 
   * **Code:** 403 TOKEN CANNOT BE GENERATED<br />
     
-  * **Code:** 404 PARTY NO FOUND<br />
-
+  * **Code:** 404 PARTY NOT FOUND<br />
 
 ## CaseFile
 
