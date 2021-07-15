@@ -83,8 +83,8 @@ curl --location --request POST 'http://<<myfarohost>>/api/v1/broker/link' \
 ```
 ## CaseFile
 
-GET CaseFile
----
+### GET CaseFile
+
 > **NEW!**
 Get the details for a CaseFile using the myFaro uid.  This includes the information on the Parties and Advisors which are assigned to the CaseFile.
 
@@ -112,8 +112,8 @@ Get the details for a CaseFile using the myFaro uid.  This includes the informat
   * **Code:** 404 CASEFILE NOT FOUND <br />
     **Content:** `{ errors : "CASEFILE NOT FOUND" }`
 
-PUT CaseFile
-----
+### PUT CaseFile
+
 > **NEW!**
 Updates a CaseFile, including Advisors.  Parties are added and removed via the CaseFile/Parties relationship.
 
