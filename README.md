@@ -99,6 +99,46 @@ http://<<myfarohost>>/case_files/5c44c7981143ec0080551ec3?locale=nl&parm_limit=0
 
 You can ask for a JWT token to allow a Party to login to myFaro and/or request a resource from myFaro.  The user does not need to have linked their account using OAuth.
 
+### POST /api/v1/authorized_resources/token
+
+> **NEW!**
+Get the details for a CaseFile using the myFaro uid.  This includes the information on the Parties and Advisors which are assigned to the CaseFile.
+
+* **URL**
+
+  /api/v1/authorized_resources/token
+
+* **Method:**
+
+  `POST`
+  
+*  **URL Params**
+
+   **Required:**
+ 
+   `party_uid=[string]`
+   
+   **Optional:**
+ 
+   `resource=[string]`
+    
+   When a Resource is provided, the User will be redirected to this Resource after succesfull login.  If no Resource or a non-supported Resource is provided, the User will be redirected to the CaseFile's default interface.
+   
+    Supported resources:
+   | Resource | Notes |
+   | :--- | :--- |
+  
+
+* **Success Response:**
+
+  * **Code:** 201 SUCCESS<br />
+    **Content:** `"uri": "http://<<myfarohost>>/authorized_resource?locale=nl&token=eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjYzNjEwNjEsImlzcyI6Im15RmFybyIsImF1ZCI6Im15RmFybyIsInVzZXJfaWQiOiI2MGYwNDg0NGIzZjAzNjBjOGI0NjM4YzUifQ.lhzctMaiyvbPfIQjLJPITphVwT7GX9KFhUSI23T5Sds"`
+ 
+* **Error Response:**
+
+  * **Code:** 403 TOKEN CANNOT BE GENERATED<br />
+    
+  * **Code:** 404 PARTY NO FOUND<br />
 
 
 ## CaseFile
