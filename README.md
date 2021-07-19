@@ -511,6 +511,26 @@ Update an InsuranceAsset.
   * **Code:** 404 INSURANCE_ASSET NOT FOUND <br />
     **Content:** `{ errors: "INSURANCE_ASSET NOT FOUND" }`
 
+
+### GET InsuranceAssets
+
+Get a list of InsuranceAssets matching a set of criteria.  Use parameters and pagination to receive 25 InsuranceAssets per call.
+
+* **URL**
+
+  /api/v1/insurance_assets/
+
+* **Method:**
+
+  `GET`
+  
+*  **URL Params**
+
+   `broker_uid` finds an exact match<br/>
+   `party_uid` finds parties whose first_name contains the parameter<br/>
+   `page` returns the set of 25 InsuranceAssets contained in this specific page<br/>
+
+
 ## Documents
 
 ### POST Documents
@@ -668,11 +688,9 @@ Policy as per https://www.telebib2.org/MIGFrameset.asp?MigId=815&lang=n
 | :BasePremiumAmount | Float | Technische premie of zuivere premie |
 | :NetPremiumAmount  | Float | Netto premie |
 | :GrossPremiumAmount  | Float | Bruto premie |
-| :PartyInsurer  | String | Verzekeraar |
-| :CompanyNumberReference  | String | Ondernemingsnummer van de verzekeraar |
-| :PartyMainPolicyHolder | String | the myFaro UID of the Party which holds or subscribes to the policy Verzekeringsnemer |
-| :PartyAdditionalPolicyHolder | String | the myFaro UID of the Party which holds or subscribes to the policy Medeverzekeringsnemer |
-| :InsuredParties | Array | array of the myFaro UID of the Parties that are insured by the policy |
+| :PartyMainPolicyHolder | String | the myFaro UID, FirstName and LastName of the Party which holds or subscribes to the policy Verzekeringsnemer |
+| :PartyAdditionalPolicyHolder | String | the myFaro UID, FirstName and LastName of the Party which holds or subscribes to the policy Medeverzekeringsnemer |
+| :InsuredParties | Array | array of the myFaro UID, FirstName and LastName of the Parties that are insured by the policy |
 | :Guarantees | Array | see Guarantees |
 
 #### Guarantees 
@@ -685,7 +703,8 @@ https://www.telebib2.org/MIGFrameset.asp?MigId=665&lang=n (DISABILITY)
 
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
-| :LifeGuaranteeType | String | Type waarborg leven |
+| :InsuredParty | String | 
+| :LifeGuaranteeType | String | Type waarborg leven https://www.telebib2.org/popupListsBis.asp?waarde=A574 |
 | :InceptionDate | Date | Aanvangsdatum |
 | :ExpiryDate | Date | Afloopdatum |
 | :ExemptionPresentBinary | Boolean | Vrijstelling |
