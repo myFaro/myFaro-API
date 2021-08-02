@@ -761,7 +761,6 @@ https://www.telebib2.org/MIGFrameset.asp?MigId=665&lang=n (DISABILITY)
 | :RateOfBonusLoadingInCaseOfLifePercentage | Float | Percentage winstdeelname (leven) |
 | :BonusLoadingInCaseOfDeathPercentage | Float | Percentage winstdeelname (overlijden) |
 | :CompensationDuration | Float | Duur vergoeding |
-| :PartialDisabilityCoveredBinary | Boolean | Gedeeltelijke ongeschiktheid gedekt |
 | :Beneficiaries | Array | See Beneficiaries |
 | :Funds | Array | See Funds |
 	
