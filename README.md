@@ -676,6 +676,14 @@ Policy as per https://www.telebib2.org/MIGFrameset.asp?MigId=815&lang=n
 
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
+| :PolicyInfo  | Hash | See PolicyInfo |
+| :InsuredParties | Array | array of the myFaro UID, FirstName and LastName of the Parties that are insured by the policy |
+| :Guarantees | Array | see Guarantees |
+
+#### PolicyInfo
+
+| Attributes  | Type | Notes |
+| :--- | :--- | :--- |
 | :PolicyProductcode  | String | Polistype |
 | :ProductNameProductcode  | String | Product |
 | :ContractInceptionDate  | Date | Initiële aanvangsdatum van het contract |
@@ -688,10 +696,8 @@ Policy as per https://www.telebib2.org/MIGFrameset.asp?MigId=815&lang=n
 | :BasePremiumAmount | Float | Technische premie of zuivere premie |
 | :NetPremiumAmount  | Float | Netto premie |
 | :GrossPremiumAmount  | Float | Bruto premie |
-| :PartyMainPolicyHolder | String | the myFaro UID, FirstName and LastName of the Party which holds or subscribes to the policy Verzekeringsnemer |
-| :PartyAdditionalPolicyHolder | String | the myFaro UID, FirstName and LastName of the Party which holds or subscribes to the policy Medeverzekeringsnemer |
-| :InsuredParties | Array | array of the myFaro UID, FirstName and LastName of the Parties that are insured by the policy |
-| :Guarantees | Array | see Guarantees |
+| :PartyMainPolicyHolder | Hash | {party_uid: myFaro UID, first_name: firstname, last_name: lastname} of the Party which holds or subscribes to the policy Verzekeringsnemer |
+| :PartyAdditionalPolicyHolder | Hash | {party_uid: myFaro UID, first_name: firstname, last_name: lastname} of the Party which holds or subscribes to the policy Medeverzekeringsnemer |
 
 #### Guarantees 
 
