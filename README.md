@@ -677,7 +677,7 @@ Policy as per https://www.telebib2.org/MIGFrameset.asp?MigId=815&lang=n
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
 | :PolicyInfo  | Hash | See PolicyInfo |
-| :InsuredParties | Array | array of the myFaro UID, FirstName and LastName of the Parties that are insured by the policy |
+| :InsuredParties | Array | array of {party_uid: myFaro UID, first_name: firstname, last_name: lastname} for the Parties that are insured by the policy |
 | :Guarantees | Array | see Guarantees |
 
 #### PolicyInfo
@@ -709,7 +709,7 @@ https://www.telebib2.org/MIGFrameset.asp?MigId=665&lang=n (DISABILITY)
 
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
-| :InsuredParty | String | 
+| :InsuredParty | Hash | {party_uid: myFaro UID, first_name: firstname, last_name: lastname} of the InsuredParty | 
 | :LifeGuaranteeType | String | Type waarborg leven https://www.telebib2.org/popupListsBis.asp?waarde=A574 |
 | :InceptionDate | Date | Aanvangsdatum |
 | :ExpiryDate | Date | Afloopdatum |
@@ -769,7 +769,7 @@ https://www.telebib2.org/MIGFrameset.asp?MigId=665&lang=n (DISABILITY)
 
 | Attributes  | Type | Notes |
 | :--- | :--- | :--- |
-| :PartyBeneficiary | String | the myFaro UID of the Party |
+| :PartyBeneficiary | Hash | {party_uid: myFaro UID, first_name: firstname, last_name: lastname} of the Party |
 | :StandardBeneficiaryCode | String | Type standaardbegunstigde |
 | :BeneficiaryRankOrderCode | String | Type aannemende begunstigde |
 | :BeneficiaryAcceptedTheContractualBenefitBinary | Boolean | Begunstigde heeft contractvoordeel aanvaard |
