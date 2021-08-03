@@ -356,9 +356,7 @@ Update a Party.
   `PUT`
   
 *  **URL Params**
- 
-   `uid=[string]`
-   
+    
 * **Data Params**
 
    `see Party model definition`
@@ -511,7 +509,6 @@ Update an InsuranceAsset.
   * **Code:** 404 INSURANCE_ASSET NOT FOUND <br />
     **Content:** `{ errors: "INSURANCE_ASSET NOT FOUND" }`
 
-
 ### GET InsuranceAssets
 
 Get a list of InsuranceAssets matching a set of criteria.  Use parameters and pagination to receive 25 InsuranceAssets per call.
@@ -526,9 +523,35 @@ Get a list of InsuranceAssets matching a set of criteria.  Use parameters and pa
   
 *  **URL Params**
 
-   `broker_uid` finds an exact match<br/>
-   `party_uid` finds parties whose first_name contains the parameter<br/>
+   `fsma_reference` limit the insurance assets for a certain insurance company<br/>
+   `insuring_party_uid` limit the insurance assets for a certain party as insurance policy holder<br/>
+   `insured_party_uid` limit the insurance assets for a certain party as insurance policy insured party<br/>
    `page` returns the set of 25 InsuranceAssets contained in this specific page<br/>
+
+* **Success Response:**
+
+  * **Code:** 200 <br/>
+    **Content:**
+  
+       ```
+        {"insurance_assets": [{see Insurance Asset model definition},{},...]
+        "meta": {`<br/>
+             "pagination": {
+                 "per_page": 25,
+                 "total_pages": 5,
+                 "total_objects": 115,
+                 "links": {
+                	"first": "/api/v1/insurance_assets?fsma_reference=79&insured_party_uid=&insuring_party_uid=&page=1",
+                	"last": "/api/v1/insurance_assets?fsma_reference=79&insured_party_uid=&insuring_party_uid=&page=2",
+                	"next": "/api/v1/insurance_assets?fsma_reference=79&insured_party_uid=&insuring_party_uid=&page=2"
+            	}
+             }
+        }
+        ```
+ 
+* **Error Response:**
+
+  * **Code:** 404 NO INSURANCE ASSETS FOUND <br />
 
 
 ## Documents
