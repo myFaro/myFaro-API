@@ -562,9 +562,9 @@ Upload a document for an entity.
 
 * **URL**
 
-   /api/v1/case_files/:uid/documents
-   /api/v1/parties/:uid/documents
-   /api/v1/insurance_assets/:uid/documents
+   /api/v1/case_files/:uid/documents<br />
+   /api/v1/parties/:uid/documents<br />
+   /api/v1/insurance_assets/:uid/documents<br />
 
 * **Method:**
 
