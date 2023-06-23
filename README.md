@@ -32,13 +32,14 @@ curl -H "Authorization: Bearer 53cff8f4a549beb1c38704158b0f6608a2382f094b6947ecc
 ##### command output
 ```
 {
-    "uid": "5e021e7c5eb6f54eef65e293",
-    "name": "John Doe",
-    "email": "john.doe@gmail.com",
-    "role": {
-        "is_broker_admin": true,
-        "is_agent": false,
-        "is_professional": true
+    "user_uid": "5e021e7c5eb6f54eef65e293",
+    "user_name": "John Doe",
+    "user_email": "john.doe@gmail.com",
+    "roles": {
+        "role_advisor": true,
+        "role_administrator": true,
+        "role_compliance": true,
+        "role_security": true
     }
 }
 ```
