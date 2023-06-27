@@ -835,3 +835,17 @@ An action item is an opportunity or a administrative task connected to a party. 
 | :action_description | String | description of the opportunity or administrative task in the party's locale |
 | :status_level | String | indication of the level of existing coverage:</br> empty</br> half</br> full
 | :completed_at | Date | date on which the action was completed in myFaro |
+
+## Webhooks
+
+### POST    /api/v1/webhooks
+
+Provide myFaro with a trigger to start processing an action for one or more objects of a certain object class.
+
+#### Attributes
+
+| Attributes  | Type | Notes |
+| :--- | :--- | :--- |
+| :object_class | String | broker </br> party </br> mifid_file |
+| :object_uids | Array of String | unique uid of the objects to be processed |
+| :action | String | create </br> update </br> destroy
