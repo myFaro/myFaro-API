@@ -843,7 +843,7 @@ An action item is an opportunity or a administrative task connected to a party. 
 Provide myFaro with a trigger to start processing an action for one or more objects of a certain object class.   Each supported application needs its own endpoint.
 
 #### Applications supported
-| Application  |
+| Application |
 | :--- |
 | brokercloud |
 
@@ -853,4 +853,4 @@ Provide myFaro with a trigger to start processing an action for one or more obje
 | :--- | :--- | :--- |
 | :object_class | String | broker </br> party </br> mifid_file |
 | :object_uids | Array of String | unique uid of the objects to be processed |
-| :action | String | create </br> update </br> destroy
+| :action | String | create </br> update </br> destroy |
