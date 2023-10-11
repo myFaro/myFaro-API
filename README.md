@@ -838,7 +838,7 @@ An action item is an opportunity or a administrative task connected to a party. 
 
 ## Webhooks
 
-### POST    /api/v1/webhooks/<<application>>
+### POST    /api/v1/webhooks/`application`
 
 Provide myFaro with a trigger to start processing an action for one or more objects of a certain object class.   Each supported application has its own endpoint.   For instance /api/v1/webhooks/brokercloud
 
